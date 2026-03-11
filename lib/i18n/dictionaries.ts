@@ -27,7 +27,7 @@ export const dictionaries: Record<Language, Dictionary> = {
             subtitle: "Regulación y uso de la IA",
             menciaLegend: "Plan de alfabetización MencIA: impulsa tu IA local",
             description: "Domina la normativa europea de Inteligencia Artificial con nuestra plataforma interactiva.",
-            highlight: "17 guías oficiales transformadas en una experiencia de aprendizaje moderna."
+            highlight: "16 guías oficiales transformadas en una experiencia de aprendizaje moderna."
         },
         gamification: {
             title: "Zona de gamificación",
@@ -49,7 +49,15 @@ export const dictionaries: Record<Language, Dictionary> = {
             count: "guías",
             description: "Biblioteca oficial de recursos. Domina el RGPD y la Ley de IA desde los fundamentos hasta la implementación técnica.",
             viewAll: "Ver todas las guías",
-            viewLess: "Mostrar menos"
+            viewLess: "Mostrar menos",
+            introTitle: "Sobre estas guías",
+            introText: "Estas guías han sido desarrolladas en el marco del piloto español de sandbox regulatorio de IA para apoyar la implementación de la normativa europea de Inteligencia Artificial. No tienen carácter vinculante, pero proporcionan recomendaciones prácticas alineadas con los requisitos regulatorios.",
+            introOrg: "Se organizan en: Guías introductorias (01-02), Guías técnicas (03-15) y Manual de checklist (16).",
+            introMore: "Más información",
+            introLess: "Ocultar",
+            sectionIntro: "Guías introductorias",
+            sectionTech: "Guías técnicas",
+            sectionChecklist: "Aplicación práctica"
         },
         footer: {
             rights: "© 2026 Diputación de Lugo - MencIA. Todos los derechos reservados."
@@ -111,7 +119,7 @@ export const dictionaries: Record<Language, Dictionary> = {
             subtitle: "Regulación e uso da IA",
             menciaLegend: "Plan de alfabetización MencIA: impulsa a túa IA local",
             description: "Domina a normativa europea de Intelixencia Artificial coa nosa plataforma interactiva.",
-            highlight: "17 guías oficiais transformadas nunha experiencia de aprendizaxe moderna."
+            highlight: "16 guías oficiais transformadas nunha experiencia de aprendizaxe moderna."
         },
         gamification: {
             title: "Zona de gamificación",
@@ -133,7 +141,15 @@ export const dictionaries: Record<Language, Dictionary> = {
             count: "guías",
             description: "Biblioteca oficial de recursos. Domina o RXPD e a Lei de IA dende os fundamentos ata a implementación técnica.",
             viewAll: "Ver todas as guías",
-            viewLess: "Mostrar menos"
+            viewLess: "Mostrar menos",
+            introTitle: "Sobre estas guías",
+            introText: "Estas guías foron desenvolvidas no marco do piloto español de sandbox regulatorio de IA para apoiar a implementación da normativa europea de Intelixencia Artificial. Non teñen carácter vinculante, pero proporcionan recomendacións prácticas aliñadas cos requisitos regulatorios.",
+            introOrg: "Organízanse en: Guías introdutorias (01-02), Guías técnicas (03-15) e Manual de checklist (16).",
+            introMore: "Máis información",
+            introLess: "Ocultar",
+            sectionIntro: "Guías introdutorias",
+            sectionTech: "Guías técnicas",
+            sectionChecklist: "Aplicación práctica"
         },
         footer: {
             rights: "© 2026 Deputación de Lugo - MencIA. Todos os dereitos reservados."
@@ -195,7 +211,7 @@ export const dictionaries: Record<Language, Dictionary> = {
             subtitle: "Regulació i ús de la IA",
             menciaLegend: "Pla d'alfabetització MencIA: impulsa la teva IA local",
             description: "Domina la normativa europea d'Intel·ligència Artificial amb la nostra plataforma interactiva.",
-            highlight: "17 guies oficials transformades en una experiència d'aprenentatge moderna."
+            highlight: "16 guies oficials transformades en una experiència d'aprenentatge moderna."
         },
         gamification: {
             title: "Zona de gamificació",
@@ -217,7 +233,15 @@ export const dictionaries: Record<Language, Dictionary> = {
             count: "guies",
             description: "Biblioteca oficial de recursos. Domina el RGPD i la Llei d'IA des dels fonaments fins a la implementació tècnica.",
             viewAll: "Veure totes les guies",
-            viewLess: "Mostrar menys"
+            viewLess: "Mostrar menys",
+            introTitle: "Sobre aquestes guies",
+            introText: "Aquestes guies han estat desenvolupades en el marc del pilot espanyol de sandbox regulatori d'IA per donar suport a la implementació de la normativa europea d'Intel·ligència Artificial. No tenen caràcter vinculant, però proporcionen recomanacions pràctiques.",
+            introOrg: "S'organitzen en: Guies introductòries (01-02), Guies tècniques (03-15) i Manual de checklist (16).",
+            introMore: "Més informació",
+            introLess: "Amagar",
+            sectionIntro: "Guies introductòries",
+            sectionTech: "Guies tècniques",
+            sectionChecklist: "Aplicació pràctica"
         },
         footer: {
             rights: "© 2026 Diputació de Lugo - MencIA. Tots els drets reservats."
@@ -279,7 +303,7 @@ export const dictionaries: Record<Language, Dictionary> = {
             subtitle: "IAren araudia eta erabilera",
             menciaLegend: "MencIA alfabetatze plana: bultzatu zure tokiko IA",
             description: "Menperatu Adimen Artifizialaren Europako araudia gure plataforma interaktiboarekin.",
-            highlight: "17 gida ofizial, ikaskuntza-esperientzia moderno bihurtuta."
+            highlight: "16 gida ofizial, ikaskuntza-esperientzia moderno bihurtuta."
         },
         gamification: {
             title: "Gamifikazio gunea",
@@ -301,7 +325,15 @@ export const dictionaries: Record<Language, Dictionary> = {
             count: "gidak",
             description: "Baliabideen liburutegi ofiziala. Menderatu DBEO eta IA Legea oinarrietatik inplementazio teknikoaraino.",
             viewAll: "Ikusi gida guztiak",
-            viewLess: "Erakutsi gutxiago"
+            viewLess: "Erakutsi gutxiago",
+            introTitle: "Gida hauen inguruan",
+            introText: "Gida hauek IAko Espainiako araugintza-sandbox pilotuaren esparruan garatu dira, Adimen Artifizialeko Europako araudia inplementatzen laguntzeko. Loturarik gabeak dira, baina gomendio praktikoak ematen dituzte.",
+            introOrg: "Honela antolatzen dira: Sarrera-gidak (01-02), Gida teknikoak (03-15) eta Checklist eskuliburua (16).",
+            introMore: "Informazio gehiago",
+            introLess: "Ezkutatu",
+            sectionIntro: "Sarrera-gidak",
+            sectionTech: "Gida teknikoak",
+            sectionChecklist: "Aplikazio praktikoa"
         },
         footer: {
             rights: "© 2026 Lugoko Aldundia - MencIA. Eskubide guztiak erreserbatuta."
