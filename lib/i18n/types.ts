@@ -49,6 +49,14 @@ export interface Dictionary {
         description: string;
         viewAll: string;
         viewLess: string;
+        introTitle: string;
+        introText: string;
+        introOrg: string;
+        introMore: string;
+        introLess: string;
+        sectionIntro: string;
+        sectionTech: string;
+        sectionChecklist: string;
     };
     quiz: {
         check: string;

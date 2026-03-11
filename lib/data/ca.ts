@@ -3,14 +3,9 @@ import { Guide } from './es';
 
 const guidesCaOverrides: Partial<Guide>[] = [
     {
-        "id": "00",
-        "title": "Recursos per a l'ús d'IA (Explicació Guies)",
-        "summary": "Aquestes guies han estat desenvolupades en el marc del pilot espanyol de sandbox regulatori d'IA per donar suport a la implementació de la normativa europea d'Intel·ligència Artificial. Tot i que no tenen caràcter vinculant, proporcionen recomanacions pràctiques alineades amb els requisits regulatoris a l'espera de normes harmonitzades."
-    },
-    {
         "id": "01",
-        "title": "Guia introductòria al reglament d'IA",
-        "summary": "Aquesta guia ofereix una visió general del Reglament Europeu d'IA, definint el seu abast i obligacions principals. Explica els nivells de risc (inacceptable, alt, transparència, mínim) i els rols dels operadors, com proveïdors i responsables del desplegament."
+        "title": "Guia introduct\u00f2ria al reglament d'IA",
+        "summary": "Aquesta guia ofereix una visi\u00f3 general del Reglament Europeu d'IA, definint el seu abast i obligacions principals. Explica els nivells de risc (inacceptable, alt, transpar\u00e8ncia, m\u00ednim) i els rols dels operadors, com proveïdors i responsables del desplegament."
     }
 ];
 

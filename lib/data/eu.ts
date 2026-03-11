@@ -3,11 +3,6 @@ import { Guide } from './es';
 
 const guidesEuOverrides: Partial<Guide>[] = [
     {
-        "id": "00",
-        "title": "IA erabiltzeko baliabideak (Giden azalpena)",
-        "summary": "Gida hauek IAko Espainiako araugintza-sandbox pilotuaren esparruan garatu dira, Adimen Artifizialeko Europako araudia inplementatzen laguntzeko. Loturarik ez badute ere, gomendio praktikoak ematen dituzte, arau arautzaileekin bat datozenak, estandar harmonizatuen zain dauden bitartean."
-    },
-    {
         "id": "01",
         "title": "IAren araudiari buruzko sarrera gida",
         "summary": "Gida honek Europako IA Erregelamenduaren ikuspegi orokorra eskaintzen du, bere irismena eta betebehar nagusiak zehaztuz. Arrisku mailak (onartezina, altua, gardentasuna, gutxienekoa) eta operadoreen rolak azaltzen ditu, hala nola hornitzaileak eta hedatzaileak."
