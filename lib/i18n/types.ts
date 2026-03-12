@@ -54,6 +54,8 @@ export interface Dictionary {
         introOrg: string;
         introMore: string;
         introLess: string;
+        introSource: string;
+        introLinkLabel: string;
         sectionIntro: string;
         sectionTech: string;
         sectionChecklist: string;

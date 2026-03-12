@@ -24,8 +24,6 @@ export default function Home() {
   });
   const checklistGuides = guides.filter(g => g.id === "16");
 
-  const displayedGuides = showAllGuides ? guides : guides.slice(0, 6);
-
   return (
     <main className="min-h-screen pb-20 bg-slate-950 text-slate-100">
       <HeroSection />
@@ -35,7 +33,7 @@ export default function Home() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <span className="text-sm font-bold text-indigo-400 uppercase tracking-widest bg-indigo-950/50 px-3 py-1 rounded-full border border-indigo-500/20 mb-3 inline-block">
-              {guides.length} {t.common.guides}
+              16 {t.common.guides}
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
               {t.guides.title}
@@ -76,14 +74,16 @@ export default function Home() {
                     <p className="text-slate-400 text-sm leading-relaxed mt-3 pt-3 border-t border-slate-800">
                       {t.guides.introOrg}
                     </p>
-                    <div className="flex items-center gap-6 mt-4">
+                    <div className="mt-4 flex items-center gap-2">
+                      <span className="text-slate-500 text-xs">{t.guides.introSource}</span>
                       <a
                         href="https://aesia.digital.gob.es/es/guias"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-indigo-400 hover:text-indigo-300 underline underline-offset-2 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-400 hover:text-white bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40 px-3 py-1.5 rounded-lg transition-all duration-200"
                       >
-                        aesia.digital.gob.es/es/guias ↗
+                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        {t.guides.introLinkLabel}
                       </a>
                     </div>
                   </motion.div>
@@ -109,19 +109,24 @@ export default function Home() {
             <h3 className="text-xl font-bold text-white">{t.guides.sectionIntro}</h3>
             <div className="flex-1 h-px bg-gradient-to-r from-emerald-500/30 to-transparent ml-3" />
           </div>
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {introGuides.map((guide, index) => (
-              <motion.div
-                key={guide.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.2, delay: index * 0.05 }}
-              >
-                <GuideCard guide={guide} index={index} />
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="flex justify-center">
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl items-stretch">
+              {introGuides.map((guide, index) => (
+                <motion.div
+                  key={guide.id}
+                  layout
+                  className="flex"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
+                >
+                  <div className="w-full">
+                    <GuideCard guide={guide} index={index} />
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Section: Guías Técnicas */}

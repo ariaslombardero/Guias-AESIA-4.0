@@ -51,10 +51,12 @@ export const dictionaries: Record<Language, Dictionary> = {
             viewAll: "Ver todas las guías",
             viewLess: "Mostrar menos",
             introTitle: "Sobre estas guías",
-            introText: "Estas guías han sido desarrolladas en el marco del piloto español de sandbox regulatorio de IA para apoyar la implementación de la normativa europea de Inteligencia Artificial. No tienen carácter vinculante, pero proporcionan recomendaciones prácticas alineadas con los requisitos regulatorios.",
+            introText: "La Agencia Española de Supervisión de la Inteligencia Artificial (AESIA) ha elaborado 16 guías técnicas en el marco del piloto español de sandbox regulatorio de IA. Estas guías apoyan la implementación práctica del Reglamento Europeo de IA y el RGPD, con especial atención a los sistemas de alto riesgo. Aunque no son vinculantes, constituyen la referencia de buenas prácticas más completa disponible en España.",
             introOrg: "Se organizan en: Guías introductorias (01-02), Guías técnicas (03-15) y Manual de checklist (16).",
             introMore: "Más información",
             introLess: "Ocultar",
+            introSource: "Fuente oficial:",
+            introLinkLabel: "Portal AESIA — Guías técnicas",
             sectionIntro: "Guías introductorias",
             sectionTech: "Guías técnicas",
             sectionChecklist: "Aplicación práctica"
@@ -147,6 +149,8 @@ export const dictionaries: Record<Language, Dictionary> = {
             introOrg: "Organízanse en: Guías introdutorias (01-02), Guías técnicas (03-15) e Manual de checklist (16).",
             introMore: "Máis información",
             introLess: "Ocultar",
+            introSource: "Fonte oficial:",
+            introLinkLabel: "Portal AESIA — Guías técnicas",
             sectionIntro: "Guías introdutorias",
             sectionTech: "Guías técnicas",
             sectionChecklist: "Aplicación práctica"
@@ -239,6 +243,8 @@ export const dictionaries: Record<Language, Dictionary> = {
             introOrg: "S'organitzen en: Guies introductòries (01-02), Guies tècniques (03-15) i Manual de checklist (16).",
             introMore: "Més informació",
             introLess: "Amagar",
+            introSource: "Font oficial:",
+            introLinkLabel: "Portal AESIA — Guies tècniques",
             sectionIntro: "Guies introductòries",
             sectionTech: "Guies tècniques",
             sectionChecklist: "Aplicació pràctica"
@@ -331,6 +337,8 @@ export const dictionaries: Record<Language, Dictionary> = {
             introOrg: "Honela antolatzen dira: Sarrera-gidak (01-02), Gida teknikoak (03-15) eta Checklist eskuliburua (16).",
             introMore: "Informazio gehiago",
             introLess: "Ezkutatu",
+            introSource: "Iturri ofiziala:",
+            introLinkLabel: "AESIA Ataria — Gida teknikoak",
             sectionIntro: "Sarrera-gidak",
             sectionTech: "Gida teknikoak",
             sectionChecklist: "Aplikazio praktikoa"
