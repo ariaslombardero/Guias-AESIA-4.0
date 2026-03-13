@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google"; // Using Outfit as the primary font
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -15,8 +15,23 @@ export const metadata: Metadata = {
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
+
+// Script inline para evitar flash (se ejecuta antes del primer render)
+const themeInitScript = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.classList.add(theme);
+    if (theme !== 'dark') document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+`;
 
 export default function RootLayout({
   children,
@@ -24,16 +39,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark scroll-smooth" suppressHydrationWarning>
-      <body
-        className={`${outfit.variable} antialiased min-h-screen bg-slate-950 text-slate-100`}
-      >
-        <LanguageProvider>
-          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-950 via-slate-950 to-slate-950 pointer-events-none -z-10" />
-          <Navbar />
-          {children}
-          <Footer />
-        </LanguageProvider>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className={`${outfit.variable} antialiased min-h-screen`}>
+        <ThemeProvider>
+          <LanguageProvider>
+            <div className="fixed inset-0 pointer-events-none -z-10 transition-opacity duration-500" />
+            <Navbar />
+            {children}
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
