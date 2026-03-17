@@ -17,18 +17,18 @@ export function GuideFlashcards({ id }: { id: string }) {
     }
 
     return (
-        <div className="min-h-screen pt-24 pb-20 flex flex-col">
-            <div className="border-b border-indigo-500/10 bg-slate-900/50 backdrop-blur-md">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-20 flex flex-col">
+            <div className="border-b border-slate-200 dark:border-indigo-500/10 bg-white/80 dark:bg-slate-900/50 backdrop-blur-md">
                 <div className="container mx-auto px-4 py-4 max-w-5xl flex items-center justify-between">
                     <Link
                         href={`/guides/${guide.id}`}
-                        className="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                        className="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         {t.navbar.activeGuide} {guide.id}
                     </Link>
-                    <h1 className="text-lg font-bold text-white line-clamp-1 max-w-md hidden md:block">
-                        Flashcards: <span className="text-slate-400 font-normal">{guide.title}</span>
+                    <h1 className="text-lg font-bold text-slate-900 dark:text-white line-clamp-1 max-w-md hidden md:block">
+                        Flashcards: <span className="text-slate-500 dark:text-slate-400 font-normal">{guide.title}</span>
                     </h1>
                     <div className="w-24 hidden md:block" />
                 </div>

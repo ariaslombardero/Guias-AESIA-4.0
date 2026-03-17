@@ -50,12 +50,12 @@ export function FlashcardDeck({ flashcards }: FlashcardDeckProps) {
                 >
                     {/* Front */}
                     <div className="absolute inset-0 w-full h-full backface-hidden">
-                        <Card className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-slate-900/80 backdrop-blur-xl border-2 border-indigo-500/30 shadow-[0_0_30px_rgba(99,102,241,0.1)] overflow-y-auto">
-                            <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-6 border border-indigo-500/20 px-3 py-1 rounded-full bg-indigo-950/50">{t.flashcards.concept}</span>
-                            <h3 className="text-2xl md:text-4xl font-black text-white leading-tight">
+                        <Card className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-white dark:bg-slate-900/80 backdrop-blur-xl border-2 border-slate-200 dark:border-indigo-500/30 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(99,102,241,0.1)] overflow-y-auto">
+                            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-6 border border-indigo-200 dark:border-indigo-500/20 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50">{t.flashcards.concept}</span>
+                            <h3 className="text-2xl md:text-4xl font-black text-slate-900 dark:text-white leading-tight">
                                 {currentCard.front}
                             </h3>
-                            <div className="absolute bottom-6 right-6 text-indigo-500/50 animate-pulse">
+                            <div className="absolute bottom-6 right-6 text-indigo-300 dark:text-indigo-500/50 animate-pulse">
                                 <RotateCw className="w-6 h-6" />
                             </div>
                         </Card>
@@ -66,9 +66,9 @@ export function FlashcardDeck({ flashcards }: FlashcardDeckProps) {
                         className="absolute inset-0 w-full h-full backface-hidden"
                         style={{ transform: "rotateY(180deg)" }}
                     >
-                        <Card className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-slate-800/90 backdrop-blur-xl border-2 border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.1)] overflow-y-auto">
-                            <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-6 border border-emerald-500/20 px-3 py-1 rounded-full bg-emerald-950/50">{t.flashcards.explanation}</span>
-                            <p className="text-lg md:text-xl text-slate-200 leading-relaxed font-light">
+                        <Card className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-emerald-50 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-emerald-200 dark:border-emerald-500/30 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(16,185,129,0.1)] overflow-y-auto">
+                            <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest mb-6 border border-emerald-200 dark:border-emerald-500/20 px-3 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-950/50">{t.flashcards.explanation}</span>
+                            <p className="text-lg md:text-xl text-emerald-950 dark:text-slate-200 leading-relaxed font-light">
                                 {currentCard.back}
                             </p>
                         </Card>
@@ -81,7 +81,7 @@ export function FlashcardDeck({ flashcards }: FlashcardDeckProps) {
                     variant="outline"
                     onClick={handlePrev}
                     disabled={flashcards.length <= 1}
-                    className="bg-slate-900 border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-slate-500 transition-all"
+                    className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
                 >
                     <ChevronLeft className="w-4 h-4 mr-2" />
                     {t.flashcards.previous}
@@ -93,7 +93,7 @@ export function FlashcardDeck({ flashcards }: FlashcardDeckProps) {
                     variant="outline"
                     onClick={handleNext}
                     disabled={flashcards.length <= 1}
-                    className="bg-slate-900 border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-slate-500 transition-all"
+                    className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
                 >
                     {t.flashcards.next}
                     <ChevronRight className="w-4 h-4 ml-2" />

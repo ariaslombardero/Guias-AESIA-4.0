@@ -36,7 +36,7 @@ export function Navbar() {
                                 className={`object-contain object-left transition-all duration-300 ${
                                     theme === "dark"
                                         ? "brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-                                        : "brightness-0 sepia-0 drop-shadow-[0_0_4px_rgba(0,0,0,0.1)] opacity-80"
+                                        : "opacity-90"
                                 }`}
                                 priority
                             />
@@ -110,13 +110,13 @@ function NavItem({
             {isActive && (
                 <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute inset-0 dark:bg-slate-800 light:bg-indigo-100 rounded-full shadow-inner dark:border dark:border-slate-700 light:border light:border-indigo-200"
+                    className="absolute inset-0 dark:bg-slate-800 light:bg-white rounded-full shadow-sm dark:border dark:border-slate-700 light:border light:border-slate-200"
                     initial={false}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     style={{ zIndex: -1 }}
                 />
             )}
-            <span className={cn("relative z-10 flex items-center", isActive ? "text-white" : "text-slate-400 group-hover:text-slate-200")}>{children}</span>
+            <span className={cn("relative z-10 flex items-center", isActive ? "dark:text-white light:text-slate-900 font-semibold" : "dark:text-slate-400 light:text-slate-500 light:group-hover:text-slate-700 dark:group-hover:text-slate-200")}>{children}</span>
         </Link>
     );
 }

@@ -17,11 +17,11 @@ export function GuideQuiz({ id }: { id: string }) {
 
     if (!guide.quiz || guide.quiz.length === 0) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-slate-950 text-white">
+            <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold mb-4">Cuestionario no disponible</h1>
-                    <p className="mb-6 text-slate-400">Esta guía aún no tiene preguntas definidas.</p>
-                    <Link href={`/guides/${id}`} className="text-indigo-400 hover:underline">
+                    <p className="mb-6 text-slate-600 dark:text-slate-400">Esta guía aún no tiene preguntas definidas.</p>
+                    <Link href={`/guides/${id}`} className="text-indigo-600 dark:text-indigo-400 hover:underline">
                         Volver a la Guía
                     </Link>
                 </div>
@@ -30,18 +30,18 @@ export function GuideQuiz({ id }: { id: string }) {
     }
 
     return (
-        <div className="min-h-screen pt-24 pb-20 flex flex-col">
-            <div className="border-b border-indigo-500/10 bg-slate-900/50 backdrop-blur-md">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-20 flex flex-col">
+            <div className="border-b border-slate-200 dark:border-indigo-500/10 bg-white/80 dark:bg-slate-900/50 backdrop-blur-md">
                 <div className="container mx-auto px-4 py-4 max-w-5xl flex items-center justify-between">
                     <Link
                         href={`/guides/${guide.id}`}
-                        className="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                        className="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         {t.navbar.activeGuide} {guide.id}
                     </Link>
-                    <h1 className="text-lg font-bold text-white line-clamp-1 max-w-md hidden md:block">
-                        Cuestionario: <span className="text-slate-400 font-normal">{guide.title}</span>
+                    <h1 className="text-lg font-bold text-slate-900 dark:text-white line-clamp-1 max-w-md hidden md:block">
+                        Cuestionario: <span className="text-slate-500 dark:text-slate-400 font-normal">{guide.title}</span>
                     </h1>
                     <div className="w-24 hidden md:block" />
                 </div>

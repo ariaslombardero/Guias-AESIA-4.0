@@ -1,120 +1,91 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Variante custom para modo claro */
+/* ── Variantes para theming por clase en html ─────────────────────── */
+/* dark: → html.dark (OBLIGATORIO para class-based dark mode en Tailwind v4) */
+@variant dark (&:where(html.dark, html.dark *));
+/* light: → html.light (modo claro explícito) */
 @variant light (&:where(html.light, html.light *));
 
 @theme {
   --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
   --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
   --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
   --color-slate-950: #020617;
 }
 
-/* ── DARK MODE (por defecto) ─────────────────────────────── */
-:root,
+/* ── DARK MODE (clase html.dark) ──────────────────────────────────── */
 html.dark {
   --bg-base: #020617;
-  --bg-gradient-from: #1e1b4b;
-  --bg-gradient-via: #020617;
   --bg-card: rgba(15, 23, 42, 0.7);
-  --bg-card-hover: rgba(15, 23, 42, 0.85);
-  --bg-content: rgba(30, 41, 59, 0.6);
-  --bg-glass: rgba(15, 23, 42, 0.6);
-  --border-subtle: rgba(51, 65, 85, 0.6);
-  --border-accent: rgba(99, 102, 241, 0.3);
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-accent: #a5b4fc;
   --accent: #6366f1;
-  --accent-light: rgba(99, 102, 241, 0.15);
   --scrollbar-track: #0f172a;
   --scrollbar-thumb: #334155;
+  color-scheme: dark;
 }
 
-/* ── LIGHT MODE ──────────────────────────────────────────── */
+/* ── LIGHT MODE — "Luz de Día Institucional" ─────────────────────── */
 html.light {
-  --bg-base: #f1f5f9;
-  --bg-gradient-from: #e0e7ff;
-  --bg-gradient-via: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: rgba(255, 255, 255, 0.95);
-  --bg-content: rgba(241, 245, 249, 0.9);
-  --bg-glass: rgba(255, 255, 255, 0.7);
-  --border-subtle: rgba(203, 213, 225, 0.8);
-  --border-accent: rgba(99, 102, 241, 0.4);
+  --bg-base: #f8fafc;
+  --bg-card: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
-  --text-accent: #4f46e5;
-  --accent: #4f46e5;
-  --accent-light: rgba(99, 102, 241, 0.1);
+  --accent: #4338ca;
   --scrollbar-track: #e2e8f0;
   --scrollbar-thumb: #94a3b8;
+  color-scheme: light;
 }
 
-/* ── BASE BODY ───────────────────────────────────────────── */
+/* ── BASE ─────────────────────────────────────────────────────────── */
 html {
   background-color: var(--bg-base);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
-html.light {
-  color-scheme: light;
-}
-
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
   min-height: 100vh;
-  background-image:
-    radial-gradient(circle at 50% 0%, var(--bg-gradient-from) 0%, transparent 50%),
-    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent) 20%, transparent) 0%, transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--bg-gradient-from) 0%, transparent 50%);
-  background-attachment: fixed;
-  background-size: cover;
   font-family: var(--font-outfit), sans-serif;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ── SCROLLBAR ───────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
+/* Fondo con gradiente espacial solo en dark */
+html.dark body {
+  background-image:
+    radial-gradient(circle at 50% 0%, #172554 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, #312e81 0%, transparent 50%),
+    radial-gradient(circle at 0%   0%, #1e1b4b 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Light: fondo limpio, sin gradiente */
+html.light body {
+  background-image: none;
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
 ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
 
-/* ── UTILIDADES GLOBALES ─────────────────────────────────── */
+/* ── UTILIDADES GLOBALES ──────────────────────────────────────────── */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .glass-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  }
-
+  .text-balance { text-wrap: balance; }
   .theme-transition {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
-
-  /* Variante light: fuerza colores claros en elementos hardcoded */
-  html.light .light-invert {
-    filter: invert(1);
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

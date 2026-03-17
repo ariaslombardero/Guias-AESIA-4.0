@@ -27,9 +27,9 @@ export default function AventuraPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-950 text-white pb-20 pt-24">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white pb-20 pt-24 transition-colors">
             {/* Background Ambience */}
-            <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-slate-950 to-slate-950 pointer-events-none" />
+            <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-100/50 via-slate-50 to-slate-50 dark:from-indigo-900/30 dark:via-slate-950 dark:to-slate-950 pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10 max-w-7xl">
                 <header className="mb-12 text-center">
@@ -38,26 +38,26 @@ export default function AventuraPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="inline-block mb-4"
                     >
-                        <span className="px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium uppercase tracking-wider backdrop-blur-md">
+                        <span className="px-4 py-1.5 rounded-full border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 text-sm font-medium uppercase tracking-wider backdrop-blur-md">
                             Modo aventura
                         </span>
                     </motion.div>
                     <motion.h1
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-br from-white via-indigo-100 to-indigo-400 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-white dark:via-indigo-100 dark:to-indigo-400 dark:drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
                     >
                         Sistemas AESIA
                     </motion.h1>
-                    <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+                    <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
                         Selecciona un sistema planetario para iniciar su conquista regulatoria.
                         <br />
                         Completa misiones para desbloquear nuevos conocimientos.
                     </p>
 
                     {/* Achievements Bar */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-4xl mx-auto bg-slate-900/50 p-6 rounded-xl border border-slate-800/50 backdrop-blur-sm shadow-2xl">
-                        <div className="flex items-center gap-2 text-amber-400 font-bold uppercase text-sm border-b md:border-b-0 md:border-r border-slate-700 pb-2 md:pb-0 md:pr-4">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-4xl mx-auto bg-white/60 dark:bg-slate-900/50 p-6 rounded-xl border border-transparent dark:border-slate-800/50 backdrop-blur-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-2xl">
+                        <div className="flex items-center gap-2 text-amber-500 font-bold uppercase text-sm border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-700 pb-2 md:pb-0 md:pr-4">
                             <Trophy className="w-6 h-6" /> Logros
                         </div>
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -69,18 +69,18 @@ export default function AventuraPage() {
                                         className={cn(
                                             "relative group p-3 rounded-lg border transition-all duration-300 transform hover:scale-105",
                                             isUnlocked
-                                                ? "bg-amber-500/10 border-amber-500/30 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
-                                                : "bg-slate-800/50 border-slate-700 text-slate-600 grayscale opacity-40 hover:opacity-100 hover:grayscale-0"
+                                                ? "bg-amber-50 border-amber-200 text-amber-500 dark:bg-amber-500/10 dark:border-amber-500/30 dark:text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.15)] dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]"
+                                                : "bg-slate-100 border-transparent text-slate-400 dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-600 grayscale opacity-50 hover:opacity-100 hover:grayscale-0"
                                         )}
                                     >
                                         <div className="text-3xl">{ach.icon}</div>
 
                                         {/* Tooltip */}
-                                        <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 bg-slate-900 border border-slate-700 p-3 rounded-lg shadow-xl text-xs text-white z-50 pointer-events-none">
-                                            <div className="font-bold text-amber-300 mb-1 text-sm">{ach.title}</div>
-                                            <div className="text-slate-400 leading-tight">{ach.description}</div>
+                                        <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg shadow-xl text-xs text-slate-800 dark:text-white z-50 pointer-events-none">
+                                            <div className="font-bold text-amber-500 dark:text-amber-300 mb-1 text-sm">{ach.title}</div>
+                                            <div className="text-slate-600 dark:text-slate-400 leading-tight">{ach.description}</div>
                                             {!isUnlocked && (
-                                                <div className="text-red-400 mt-2 font-mono text-[10px] uppercase flex items-center justify-center border-t border-slate-800 pt-1">
+                                                <div className="text-red-500 dark:text-red-400 mt-2 font-mono text-[10px] uppercase flex items-center justify-center border-t border-slate-100 dark:border-slate-800 pt-1">
                                                     <Lock className="w-3 h-3 mr-1" /> Bloqueado
                                                 </div>
                                             )}
@@ -136,11 +136,11 @@ function WorldCard({ world, index, progress }: { world: any, index: number, prog
                     world.color
                 )} />
 
-                <div className="relative h-full bg-slate-900/50 backdrop-blur-md border border-slate-800 rounded-2xl p-6 overflow-hidden hover:border-slate-500 transition-all duration-300 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1">
+                <div className="relative h-full bg-white dark:bg-slate-900/50 backdrop-blur-md border border-transparent dark:border-slate-800 rounded-2xl p-6 overflow-hidden dark:hover:border-slate-500 transition-all duration-300 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none hover:shadow-[0_20px_40px_-15px_rgba(99,102,241,0.15)] dark:hover:shadow-2xl hover:-translate-y-1">
                     {/* Header Icon */}
                     <div className="flex justify-between items-start mb-4">
                         <div className={cn(
-                            "w-12 h-12 rounded-xl flex items-center justify-center text-3xl shadow-lg border border-white/10 relative transition-transform group-hover:scale-110",
+                            "w-12 h-12 rounded-xl flex items-center justify-center text-3xl shadow-lg border border-transparent dark:border-white/10 relative transition-transform group-hover:scale-110",
                             `bg-gradient-to-br ${world.color}`
                         )}>
                             {world.icon}
@@ -152,14 +152,14 @@ function WorldCard({ world, index, progress }: { world: any, index: number, prog
                             )}
                         </div>
                         {isLocked ? (
-                            <Lock className="w-5 h-5 text-slate-700" />
+                            <Lock className="w-5 h-5 text-slate-400 dark:text-slate-700" />
                         ) : (
                             <div className="flex flex-col items-end">
                                 <span className={cn(
                                     "text-[10px] font-bold px-2 py-1 rounded-full border uppercase tracking-wider",
                                     progress.isCompleted
-                                        ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                                        : "bg-slate-800 text-slate-500 border-slate-700"
+                                        ? "bg-emerald-50 text-emerald-600 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/30"
+                                        : "bg-slate-100 text-slate-600 border-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:border-slate-700"
                                 )}>
                                     {progress.isCompleted ? "Completado" : "En progreso"}
                                 </span>
@@ -169,30 +169,30 @@ function WorldCard({ world, index, progress }: { world: any, index: number, prog
 
                     {/* Texts */}
                     <div className="flex-1 mb-4">
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                             {world.name}
                         </h3>
-                        <p className="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                        <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
                             {world.description}
                         </p>
                     </div>
 
                     {/* Progress Bar & Footer */}
-                    <div className="mt-auto pt-4 border-t border-slate-800/50">
+                    <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800/50">
                         <div className="flex justify-between items-end mb-2">
-                            <span className="text-xs font-mono text-slate-500 group-hover:text-slate-400 transition-colors">
+                            <span className="text-xs font-mono text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
                                 SISTEMA {world.guideId}
                             </span>
                             <span className={cn(
                                 "text-xs font-bold transition-colors",
-                                progress.completedMissions > 0 ? "text-indigo-400" : "text-slate-600"
+                                progress.completedMissions > 0 ? "text-indigo-600 dark:text-indigo-400" : "text-slate-400 dark:text-slate-600"
                             )}>
                                 {progress.completedMissions} / {totalMissions} Misiones
                             </span>
                         </div>
 
                         {/* Progress Bar Track */}
-                        <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner">
+                        <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
                             <motion.div
                                 className={cn("h-full rounded-full transition-all duration-1000 ease-out", `bg-gradient-to-r ${world.color}`)}
                                 initial={{ width: 0 }}

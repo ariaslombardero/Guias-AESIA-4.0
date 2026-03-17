@@ -52,31 +52,54 @@ const WidgetMap: Record<string, React.FC<any>> = {
     'MaturityScale': MaturityScale,
 };
 
-// Convierte a sentence case en español: solo mayúscula la primera palabra real,
-// preservando siglas (ALL_CAPS) y capitalizando tras numeración de sección.
 function toSpanishSentenceCase(text: string): string {
     if (!text) return text;
-    return text
-        .split(' ')
-        .map((word, i, arr) => {
-            const clean = word.replace(/[.,;:()[\]]/g, '');
-            // Sigla: palabra ALL_CAPS con letras (IA, RGPD, AESIA, GPAI, AEPD…) → preservar
-            if (clean.length >= 1 && /^[A-ZÁÉÍÓÚÑ0-9]+$/.test(clean) && /[A-ZÁÉÍÓÚÑ]/.test(clean)) {
-                return word;
+    
+    let isFirstRealWordDone = false;
+    
+    return text.split(' ').map((word, i, arr) => {
+        const clean = word.replace(/[.,;:()\[\]¿?¡!]/g, '');
+        // Sigla: palabra ALL_CAPS con letras
+        if (clean.length >= 1 && /^[A-ZÁÉÍÓÚÑ0-9]+$/.test(clean) && /[A-ZÁÉÍÓÚÑ]/.test(clean)) {
+            if (/[a-zA-ZáéíóúñÁÉÍÓÚÑ]/.test(word)) isFirstRealWordDone = true;
+            return word;
+        }
+
+        const hasLetters = /[a-zA-ZáéíóúñÁÉÍÓÚÑ]/.test(word);
+        const prev = arr[i - 1];
+        const prevWords = arr.slice(0, Math.max(0, i));
+        // Check if there is any word before that ends with a dot (to support things like "1. 🧠 Conceptos")
+        const prevWordWithDot = prevWords.reverse().find(w => /[a-zA-ZáéíóúñÁÉÍÓÚÑ0-9]\./.test(w));
+        const prevWordEndsWithDot = prev && /[a-zA-ZáéíóúñÁÉÍÓÚÑ0-9]\./.test(prev);
+
+        const shouldCapitalize = (!isFirstRealWordDone && hasLetters) || 
+                                 (hasLetters && prevWordEndsWithDot);
+
+        if (shouldCapitalize) {
+            isFirstRealWordDone = true;
+            let firstFound = false;
+            let result = "";
+            for (let j = 0; j < word.length; j++) {
+                const char = word[j];
+                if (/[a-zA-ZáéíóúñÁÉÍÓÚÑ]/.test(char)) {
+                    if (!firstFound) {
+                        result += char.toUpperCase();
+                        firstFound = true;
+                    } else {
+                        result += char.toLowerCase();
+                    }
+                } else {
+                    result += char;
+                }
             }
-            // Primera palabra siempre capitalizada
-            if (i === 0) {
-                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-            }
-            const prev = arr[i - 1];
-            // Si la palabra anterior termina en punto ("1.", "I.") o es decimal ("2.1") → capitalizar
-            if (prev.endsWith('.') || /^\d+(\.\d+)*$/.test(prev)) {
-                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-            }
-            // Resto → minúscula
+            return result;
+        } else if (hasLetters) {
+            isFirstRealWordDone = true;
             return word.toLowerCase();
-        })
-        .join(' ');
+        }
+        
+        return word;
+    }).join(' ');
 }
 
 export function GuideContent({ content }: GuideContentProps) {
@@ -91,15 +114,15 @@ export function GuideContent({ content }: GuideContentProps) {
     return (
         <div className="space-y-4 w-full max-w-4xl mx-auto mt-8">
             <div className="flex items-center space-x-2 mb-6">
-                <Layers className="w-5 h-5 text-indigo-400" />
-                <h2 className="text-xl font-bold text-white">Índice de contenidos</h2>
+                <Layers className="w-5 h-5 text-indigo-500 dark:text-indigo-400" />
+                <h2 className="text-xl font-bold text-slate-800 dark:text-white">Índice de contenidos</h2>
             </div>
 
             <div className="grid gap-3">
                 {content.map((section, index) => (
                     <div
                         key={index}
-                        className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/60 rounded-xl overflow-hidden hover:border-indigo-500/30 transition-colors"
+                        className="bg-white dark:bg-slate-900/40 backdrop-blur-sm border-slate-200 dark:border-slate-800/60 border rounded-xl overflow-hidden hover:border-indigo-300 dark:hover:border-indigo-500/30 shadow-[0_4px_15px_rgb(0,0,0,0.03)] dark:shadow-none transition-colors"
                     >
                         <button
                             onClick={() => toggleSection(index)}
@@ -109,14 +132,16 @@ export function GuideContent({ content }: GuideContentProps) {
                                 <span className={cn(
                                     "flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold transition-colors",
                                     openSectionIndex === index
-                                        ? "bg-indigo-500/20 text-indigo-400 ring-1 ring-indigo-500/50"
-                                        : "bg-slate-800 text-slate-500 group-hover:bg-slate-800/80 group-hover:text-slate-300"
+                                        ? "bg-indigo-100 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-400 ring-1 ring-indigo-300 dark:ring-indigo-500/50"
+                                        : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-500 group-hover:bg-slate-200 group-hover:text-slate-900 dark:group-hover:bg-slate-800/80 dark:group-hover:text-slate-300"
                                 )}>
                                     {index + 1}
                                 </span>
                                 <span className={cn(
                                     "font-medium transition-colors",
-                                    openSectionIndex === index ? "text-white" : "text-slate-300 group-hover:text-white"
+                                    openSectionIndex === index
+                                        ? "text-indigo-700 dark:text-white"
+                                        : "text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white"
                                 )}>
                                     {toSpanishSentenceCase(section.title)}
                                 </span>
@@ -136,7 +161,7 @@ export function GuideContent({ content }: GuideContentProps) {
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                 >
-                                    <div className="bg-slate-800/60 border-t border-slate-700/40">
+                                        <div className="bg-slate-50 dark:bg-slate-800/60 border-t border-slate-200 dark:border-slate-700/40">
                                         <div className="px-5 py-6 md:px-8 md:py-8">
                                             <div className="max-w-3xl mx-auto space-y-1">
                                                 <ReactMarkdown
@@ -144,68 +169,72 @@ export function GuideContent({ content }: GuideContentProps) {
                                                     components={{
                                                         // Párrafos con espaciado generoso
                                                         p: ({ children }) => (
-                                                            <p className="text-[0.97rem] leading-[1.85] text-slate-300 font-light tracking-wide mb-4 last:mb-0">{children}</p>
+                                                            <p className="text-slate-700 dark:text-slate-300 text-[0.92rem] leading-[1.85] mb-4 font-light">{children}</p>
                                                         ),
                                                         // Headings diferenciados
                                                         h2: ({ children }) => (
-                                                            <h2 className="text-indigo-300 text-lg font-bold mt-7 mb-3 pb-1 border-b border-indigo-500/20">{toSpanishSentenceCase(String(children))}</h2>
+                                                            <h2 className="text-indigo-600 dark:text-indigo-300 text-lg font-bold mt-7 mb-3 pb-1 border-b border-indigo-200 dark:border-indigo-500/20">{toSpanishSentenceCase(String(children))}</h2>
                                                         ),
                                                         h3: ({ children }) => (
-                                                            <h3 className="text-slate-200 text-base font-semibold mt-5 mb-2">{toSpanishSentenceCase(String(children))}</h3>
+                                                            <h3 className="text-slate-800 dark:text-slate-200 text-base font-semibold mt-5 mb-2">{toSpanishSentenceCase(String(children))}</h3>
                                                         ),
                                                         h4: ({ children }) => (
-                                                            <h4 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mt-4 mb-2 text-indigo-400/80">{toSpanishSentenceCase(String(children))}</h4>
+                                                            <h4 className="text-indigo-600 dark:text-indigo-400/80 text-sm font-semibold uppercase tracking-wider mt-4 mb-2">{toSpanishSentenceCase(String(children))}</h4>
                                                         ),
                                                         // Blockquote estilizado
                                                         blockquote: ({ children }) => (
-                                                            <blockquote className="border-l-4 border-indigo-500/60 bg-indigo-950/30 pl-4 pr-3 py-3 my-4 rounded-r-lg text-slate-300 italic text-sm leading-relaxed">
-                                                                {children}
+                                                            <blockquote className="my-4 pl-4 py-2 border-l-4 border-indigo-500/50 bg-indigo-50/80 dark:bg-indigo-950/30 rounded-r-lg">
+                                                                <div className="text-slate-700 dark:text-slate-300 text-sm italic leading-relaxed">{children}</div>
                                                             </blockquote>
                                                         ),
-                                                        // Listas con puntos personalizados
+                                                        // Listas
                                                         ul: ({ children }) => (
-                                                            <ul className="space-y-2 my-3 pl-1">{children}</ul>
+                                                            <ul className="my-6 space-y-5 pl-1">{children}</ul>
                                                         ),
                                                         ol: ({ children }) => (
-                                                            <ol className="space-y-2 my-3 pl-1 list-decimal list-inside">{children}</ol>
+                                                            <ol className="my-6 space-y-5 pl-1 list-decimal list-inside">{children}</ol>
                                                         ),
                                                         li: ({ children }) => (
-                                                            <li className="flex items-start gap-2 text-[0.95rem] text-slate-300 leading-relaxed">
-                                                                <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-indigo-400/70 flex-shrink-0" />
-                                                                <span>{children}</span>
+                                                            <li className="flex gap-3 text-slate-700 dark:text-slate-300 text-[0.95rem] leading-[1.85]">
+                                                                <span className="mt-[0.55rem] flex-shrink-0 w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400/60"></span>
+                                                                <div className="flex-1 space-y-3">{children}</div>
                                                             </li>
                                                         ),
                                                         // Texto en negrita y cursiva
                                                         strong: ({ children }) => (
-                                                            <strong className="text-indigo-200 font-medium">{children}</strong>
+                                                            <strong className="dark:text-indigo-200 light:text-indigo-700 font-medium">{children}</strong>
                                                         ),
                                                         em: ({ children }) => (
-                                                            <em className="text-indigo-300/90 not-italic font-medium">{children}</em>
+                                                            <em className="dark:text-indigo-300/90 light:text-indigo-600 not-italic font-medium">{children}</em>
                                                         ),
                                                         // Código inline
                                                         code: ({ children }) => (
-                                                            <code className="bg-slate-700/60 text-emerald-300 text-xs px-1.5 py-0.5 rounded font-mono">{children}</code>
+                                                            <code className="text-amber-300 bg-slate-800/80 px-1.5 py-0.5 rounded text-xs font-mono">{children}</code>
                                                         ),
-                                                        // Tablas GFM elegantes
+                                                        // TABLAS - soporte completo GFM
                                                         table: ({ children }) => (
-                                                            <div className="w-full overflow-x-auto my-6 rounded-xl border border-slate-700/60 shadow-lg">
-                                                                <table className="w-full text-sm">{children}</table>
+                                                            <div className="my-5 w-full overflow-x-auto rounded-xl border border-slate-700/50">
+                                                                <table className="w-full text-sm border-collapse">{children}</table>
                                                             </div>
                                                         ),
                                                         thead: ({ children }) => (
-                                                            <thead className="bg-indigo-950/80 border-b border-indigo-500/30">{children}</thead>
-                                                        ),
-                                                        th: ({ children }) => (
-                                                            <th className="px-4 py-3 text-left text-xs font-semibold text-indigo-300 uppercase tracking-wider whitespace-nowrap">{children}</th>
+                                                            <thead className="bg-indigo-950/60 border-b border-indigo-500/30">{children}</thead>
                                                         ),
                                                         tbody: ({ children }) => (
-                                                            <tbody className="divide-y divide-slate-700/40">{children}</tbody>
+                                                            <tbody className="divide-y divide-slate-800/60">{children}</tbody>
                                                         ),
                                                         tr: ({ children }) => (
-                                                            <tr className="hover:bg-indigo-500/5 transition-colors">{children}</tr>
+                                                            <tr className="hover:bg-slate-800/30 transition-colors">{children}</tr>
+                                                        ),
+                                                        th: ({ children }) => (
+                                                            <th className="px-4 py-3 text-left text-xs font-bold dark:text-indigo-300 light:text-indigo-700 uppercase tracking-wider">{children}</th>
                                                         ),
                                                         td: ({ children }) => (
-                                                            <td className="px-4 py-3 text-slate-300 text-sm leading-snug align-top">{children}</td>
+                                                            <td className="px-4 py-3 dark:text-slate-300 light:text-slate-700 text-[0.88rem] leading-relaxed">{children}</td>
+                                                        ),
+                                                        // Separador horizontal
+                                                        hr: () => (
+                                                            <hr className="my-6 border-slate-700/50" />
                                                         ),
                                                     }}
                                                 >

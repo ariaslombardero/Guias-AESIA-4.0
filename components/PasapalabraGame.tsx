@@ -116,20 +116,20 @@ export default function PasapalabraGame() {
     return (
         <div className="flex flex-col items-center justify-center min-h-[600px] w-full max-w-4xl mx-auto relative p-4">
             {gameState === "intro" && (
-                <div className="text-center space-y-8 z-10 bg-slate-900/80 backdrop-blur-md p-12 rounded-3xl border border-indigo-500/30 shadow-2xl">
+                <div className="text-center space-y-8 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-12 rounded-3xl border border-blue-100 dark:border-indigo-500/30 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-2xl">
                     <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-lg animate-pulse">
                         <Play className="w-10 h-10 text-white fill-current ml-1" />
                     </div>
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Rosco</span> IA
+                        <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter uppercase">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Rosco</span> IA
                         </h1>
-                        <p className="text-xl text-slate-400 max-w-lg mx-auto">
+                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-lg mx-auto">
                             Demuestra tu dominio del Reglamento de IA. <br />
                             Responde a las definiciones de la A a la Z.
                         </p>
                     </div>
-                    <Button onClick={startGame} size="lg" className="text-lg px-10 py-6 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-transform hover:scale-105">
+                    <Button onClick={startGame} size="lg" className="text-lg px-10 py-6 rounded-full bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white shadow-[0_4px_14px_0_rgb(67,56,202,0.39)] dark:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-transform hover:scale-105">
                         Comenzar Reto
                     </Button>
                 </div>
@@ -138,7 +138,7 @@ export default function PasapalabraGame() {
             {gameState === "playing" && activeQuestion && (
                 <div className="relative w-full max-w-3xl aspect-square flex items-center justify-center">
                     {/* The Rosco Circle */}
-                    <div className="absolute inset-0 rounded-full border border-slate-700/30 pointer-events-none" />
+                    <div className="absolute inset-0 rounded-full border border-slate-200/60 dark:border-slate-700/30 pointer-events-none" />
 
                     {questions.map((q, i) => {
                         const total = questions.length;
@@ -156,9 +156,9 @@ export default function PasapalabraGame() {
                             <motion.div
                                 key={q.letter}
                                 className={cn(
-                                    "absolute w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold border-2 transition-all duration-300 shadow-lg",
-                                    status === "base" && "bg-slate-800 border-slate-600 text-white",
-                                    status === "current" && "bg-blue-500 border-blue-400 text-white scale-125 z-10 shadow-[0_0_15px_#3b82f6]",
+                                    "absolute w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold border-2 transition-all duration-300 shadow-sm dark:shadow-lg",
+                                    status === "base" && "bg-slate-100 border-slate-300 text-slate-600 dark:bg-slate-800 dark:border-slate-600 dark:text-white",
+                                    status === "current" && "bg-blue-600 border-blue-500 text-white dark:bg-blue-500 dark:border-blue-400 scale-125 z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)] dark:shadow-[0_0_15px_#3b82f6]",
                                     status === "correct" && "bg-emerald-500 border-emerald-400 text-white",
                                     status === "incorrect" && "bg-red-500 border-red-400 text-white",
                                     status === "pasapalabra" && "bg-amber-500 border-amber-400 text-white",
@@ -176,29 +176,29 @@ export default function PasapalabraGame() {
                     })}
 
                     {/* Center HUD */}
-                    <div className="z-20 flex flex-col items-center justify-center text-center max-w-md bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700 shadow-2xl relative">
+                    <div className="z-20 flex flex-col items-center justify-center text-center max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-2xl relative">
                         <div className="flex items-center gap-4 mb-6 w-full justify-between">
                             <div className="flex flex-col items-center">
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Tiempo</span>
-                                <div className={cn("text-2xl font-mono font-bold flex items-center gap-2", timeLeft < 30 ? "text-red-500 animate-pulse" : "text-white")}>
+                                <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Tiempo</span>
+                                <div className={cn("text-2xl font-mono font-bold flex items-center gap-2", timeLeft < 30 ? "text-red-500 animate-pulse" : "text-slate-800 dark:text-white")}>
                                     <Clock className="w-5 h-5" /> {timeLeft}s
                                 </div>
                             </div>
                             <div className="flex flex-col items-center">
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Aciertos</span>
-                                <div className="text-2xl font-mono font-bold text-emerald-400 flex items-center gap-2">
+                                <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Aciertos</span>
+                                <div className="text-2xl font-mono font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
                                     <Trophy className="w-5 h-5" /> {score}
                                 </div>
                             </div>
                         </div>
 
                         <div className="mb-6 space-y-2">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-400 uppercase tracking-wider">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                                 {activeQuestion.type === "Empieza por" ? "Empieza por" : "Contiene la"}
-                                <span className="text-blue-400 font-black text-sm">{activeQuestion.letter}</span>
+                                <span className="text-blue-600 dark:text-blue-400 font-black text-sm">{activeQuestion.letter}</span>
                             </div>
                             <div className="min-h-[120px] flex items-center justify-center">
-                                <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
+                                <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-relaxed">
                                     {activeQuestion.question}
                                 </h2>
                             </div>
@@ -210,7 +210,7 @@ export default function PasapalabraGame() {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder="Escribe tu respuesta..."
-                                className="bg-slate-800 border-slate-600 text-white text-center text-lg h-12 rounded-full focus:ring-blue-500 focus:border-blue-500"
+                                className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white text-center text-lg h-12 rounded-full focus:ring-blue-500 focus:border-blue-500"
                             />
                             <div className="flex gap-4">
                                 <Button
@@ -234,28 +234,28 @@ export default function PasapalabraGame() {
             )}
 
             {gameState === "finished" && (
-                <div className="text-center space-y-8 z-10 bg-slate-900/90 backdrop-blur-md p-12 rounded-3xl border border-slate-700 shadow-2xl">
-                    <Trophy className="w-24 h-24 text-yellow-400 mx-auto drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
+                <div className="text-center space-y-8 z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-12 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-2xl">
+                    <Trophy className="w-24 h-24 text-yellow-500 dark:text-yellow-400 mx-auto drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
 
                     <div>
-                        <h2 className="text-4xl font-black text-white mb-2 uppercase">Juego Terminado</h2>
-                        <p className="text-slate-400">Has completado el rosco.</p>
+                        <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-2 uppercase">Juego Terminado</h2>
+                        <p className="text-slate-600 dark:text-slate-400">Has completado el rosco.</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-8 max-w-xs mx-auto">
-                        <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-2xl flex flex-col items-center">
-                            <span className="text-3xl font-black text-emerald-400">{score}</span>
-                            <span className="text-xs uppercase font-bold text-emerald-600">Aciertos</span>
+                        <div className="bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 p-4 rounded-2xl flex flex-col items-center">
+                            <span className="text-3xl font-black text-emerald-600 dark:text-emerald-400">{score}</span>
+                            <span className="text-xs uppercase font-bold text-emerald-700 dark:text-emerald-600">Aciertos</span>
                         </div>
-                        <div className="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl flex flex-col items-center">
-                            <span className="text-3xl font-black text-red-400">
+                        <div className="bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/30 p-4 rounded-2xl flex flex-col items-center">
+                            <span className="text-3xl font-black text-red-600 dark:text-red-400">
                                 {Object.values(answers).filter(s => s === "incorrect").length}
                             </span>
-                            <span className="text-xs uppercase font-bold text-red-600">Fallos</span>
+                            <span className="text-xs uppercase font-bold text-red-700 dark:text-red-600">Fallos</span>
                         </div>
                     </div>
 
-                    <Button onClick={startGame} size="lg" className="w-full bg-white text-slate-900 hover:bg-slate-200 font-bold rounded-full h-14 text-lg">
+                    <Button onClick={startGame} size="lg" className="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 font-bold rounded-full h-14 text-lg shadow-md transition-transform hover:scale-105">
                         <RotateCcw className="w-5 h-5 mr-2" /> Jugar de nuevo
                     </Button>
                 </div>
