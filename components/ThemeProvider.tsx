@@ -24,9 +24,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         // Leer preferencia guardada o sistema
-        const stored = localStorage.getItem("theme") as Theme | null;
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const initial: Theme = stored ?? (prefersDark ? "dark" : "light");
+        const initial: Theme = (localStorage.getItem("theme") as Theme | null) ?? "dark";
         setTheme(initial);
         applyTheme(initial);
         setMounted(true);

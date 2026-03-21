@@ -24,10 +24,10 @@ const themeInitScript = `
 (function() {
   try {
     var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored || (prefersDark ? 'dark' : 'light');
+    var theme = stored || 'dark';
     document.documentElement.classList.add(theme);
     if (theme !== 'dark') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark'); // Refuerzo para asegurar que 'dark' está presente
   } catch(e) {
     document.documentElement.classList.add('dark');
   }
