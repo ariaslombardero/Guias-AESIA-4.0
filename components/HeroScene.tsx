@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshTransmissionMaterial } from "@react-three/drei";
 import * as THREE from "three";
@@ -52,19 +52,25 @@ function Particles() {
     const points = useRef<THREE.Points>(null!);
     const count = 120;
 
-    const positions = useMemo(() => {
+    const [positions, setPositions] = useState<Float32Array>(new Float32Array(0));
+
+    useEffect(() => {
         const pos = new Float32Array(count * 3);
         for (let i = 0; i < count; i++) {
             pos[i * 3] = (Math.random() - 0.5) * 16;
             pos[i * 3 + 1] = (Math.random() - 0.5) * 10;
             pos[i * 3 + 2] = (Math.random() - 0.5) * 8;
         }
-        return pos;
+        setPositions(pos);
     }, []);
 
     useFrame((state) => {
-        points.current.rotation.y = state.clock.getElapsedTime() * 0.02;
+        if (points.current) {
+            points.current.rotation.y = state.clock.getElapsedTime() * 0.02;
+        }
     });
+
+    if (positions.length === 0) return null;
 
     return (
         <points ref={points}>
@@ -100,6 +106,11 @@ function Scene() {
 }
 
 export function HeroScene() {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return <div className="absolute inset-0 bg-transparent" />;
+
     return (
         <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
             <Canvas

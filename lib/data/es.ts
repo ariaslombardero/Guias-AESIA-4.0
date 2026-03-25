@@ -980,19 +980,19 @@ export const guides: Guide[] = [
       "contentIndex": [
           {
               "title": "Introducción y obligaciones del reglamento de IA (artículo 9)",
-              "content": "El artículo 9 del Reglamento Europeo de Inteligencia Artificial (RIA) establece la obligación principal para los proveedores de sistemas de inteligencia artificial de alto riesgo (HRAIS) de establecer, implantar, documentar y mantener un **sistema de gestión de riesgos**.\n\n### 🔄 Proceso Iterativo Continuo\n\nEste sistema no es una actividad puntual, sino que se entiende como un proceso planificado y ejecutado durante todo el ciclo de vida del sistema, requiriendo revisiones y actualizaciones sistemáticas. Las etapas incluyen:\n\n1.  **Determinación y análisis pormenorizado:** Abarca los riesgos conocidos y previsibles que el sistema pueda plantear para la salud, la seguridad o los derechos fundamentales.\n2.  **Estimación de uso indebido:** Evaluar los riesgos que podrían surgir del uso indebido *razonablemente previsible* por parte de los usuarios.\n3.  **Evaluación de riesgos emergentes:** Analizar los datos recogidos con el sistema de vigilancia poscomercialización.\n\n### 🛡️ Medidas de Gestión y Colectivos Vulnerables\n\nA partir de estas evaluaciones, el proveedor debe adoptar medidas para hacer frente a los riesgos detectados de forma proporcionada. \n*   *Nota:* Los riesgos referidos son únicamente aquellos que pueden mitigarse o eliminarse razonablemente mediante el desarrollo, diseño o el suministro de información técnica adecuada.\n\nAdemás, la normativa establece un mandato claro de protección hacia las poblaciones más sensibles, obligando a prestar especial atención a posibles afectaciones negativas sobre **menores de dieciocho años y otros colectivos vulnerables**."
+              "content": "El artículo 9 del Reglamento Europeo de Inteligencia Artificial (RIA) establece la obligación principal para los proveedores de sistemas de inteligencia artificial de alto riesgo (HRAIS) de establecer, implantar, documentar y mantener un **sistema de gestión de riesgos**.\n\n### 🔄 Proceso iterativo continuo\n\nEste sistema no es una actividad puntual, sino que se entiende como un proceso planificado y ejecutado durante todo el ciclo de vida del sistema, requiriendo revisiones y actualizaciones sistemáticas. Las etapas incluyen:\n\n1.  **Determinación y análisis pormenorizado:** Abarca los riesgos conocidos y previsibles que el sistema pueda plantear para la salud, la seguridad o los derechos fundamentales.\n2.  **Estimación de uso indebido:** Evaluar los riesgos que podrían surgir del uso indebido *razonablemente previsible* por parte de los usuarios.\n3.  **Evaluación de riesgos emergentes:** Analizar los datos recogidos con el sistema de vigilancia poscomercialización.\n\n### 🛡️ Medidas de gestión y colectivos vulnerables\n\nA partir de estas evaluaciones, el proveedor debe adoptar medidas para hacer frente a los riesgos detectados de forma proporcionada. \n*   *Nota:* Los riesgos referidos son únicamente aquellos que pueden mitigarse o eliminarse razonablemente mediante el desarrollo, diseño o el suministro de información técnica adecuada.\n\nAdemás, la normativa establece un mandato claro de protección hacia las poblaciones más sensibles, obligando a prestar especial atención a posibles afectaciones negativas sobre **menores de dieciocho años y otros colectivos vulnerables**."
           },
           {
               "title": "Determinación del apetito al riesgo y contexto del sistema",
-              "content": "La determinación del apetito al riesgo y la comprensión del contexto son los pilares iniciales sobre los que se asienta cualquier sistema de gestión de riesgos eficaz.\n\n### 📊 Apetito al Riesgo\n\nEl apetito al riesgo se define como el **nivel de riesgo que una organización está dispuesta a asumir o aceptar** frente a las posibles afectaciones sobre la salud, seguridad y derechos fundamentales que provoque su sistema.\n*   **Matriz de Riesgos:** Para cuantificarlo objetivamente, las organizaciones suelen cruzar la *probabilidad de ocurrencia* de un evento adverso con su *impacto/gravedad*.\n*   Esto establece un umbral máximo a partir del cual se deben determinar controles obligatorios.\n\n### 🌍 Contexto del Sistema\n\nLa definición del contexto implica analizar de manera exhaustiva tanto el entorno externo como el interno en el que el sistema será diseñado, desarrollado y utilizado.\n\n*   Debe considerar factores **sociales, culturales, regulatorios y tecnológicos**.\n*   **Carta de los Derechos Fundamentales de la UE:** Es un elemento contextual indispensable. Los sistemas deben respetar derechos clave como la no discriminación y la protección de datos personales.\n\n> 💡 Una comprensión profunda de este entorno y contexto es la base esencial para identificar amenazas. Una evaluación inadecuada en esta fase inicial resultaría irremediablemente en una identificación incompleta de riesgos."
+              "content": "La determinación del apetito al riesgo y la comprensión del contexto son los pilares iniciales sobre los que se asienta cualquier sistema de gestión de riesgos eficaz.\n\n### 📊 Apetito al riesgo\n\nEl apetito al riesgo se define como el **nivel de riesgo que una organización está dispuesta a asumir o aceptar** frente a las posibles afectaciones sobre la salud, seguridad y derechos fundamentales que provoque su sistema.\n*   **Matriz de Riesgos:** Para cuantificarlo objetivamente, las organizaciones suelen cruzar la *probabilidad de ocurrencia* de un evento adverso con su *impacto/gravedad*.\n*   Esto establece un umbral máximo a partir del cual se deben determinar controles obligatorios.\n\n### 🌍 Contexto del sistema\n\nLa definición del contexto implica analizar de manera exhaustiva tanto el entorno externo como el interno en el que el sistema será diseñado, desarrollado y utilizado.\n\n*   Debe considerar factores **sociales, culturales, regulatorios y tecnológicos**.\n*   **Carta de los Derechos Fundamentales de la UE:** Es un elemento contextual indispensable. Los sistemas deben respetar derechos clave como la no discriminación y la protección de datos personales.\n\n> 💡 Una comprensión profunda de este entorno y contexto es la base esencial para identificar amenazas. Una evaluación inadecuada en esta fase inicial resultaría irremediablemente en una identificación incompleta de riesgos."
           },
           {
               "title": "Identificación, análisis y evaluación de riesgos",
-              "content": "El núcleo operativo de la gestión de riesgos está compuesto por fases consecutivas:\n\n### 🔍 1. Identificación de Riesgos\n\nEs el proceso de descubrimiento, reconocimiento y documentación de diferentes peligros.\n*   **Inventario de Componentes:** Se recomienda comenzar identificando actores principales (científicos de datos), datos (sin procesar, entrenamiento, prueba), entornos, herramientas y procesos.\n*   **Amenazas asociadas:** Basándose en el contexto previo, se identifican amenazas que podrían explotar vulnerabilidades, como la discriminación por *sesgos algorítmicos* o la *filtración de información confidencial*.\n\n### 📈 2. Análisis y Evaluación\n\nDetermina la criticidad asignando un valor cualitativo o numérico de **probabilidad de ocurrencia y nivel de impacto** a cada riesgo.\n\n1.  **Riesgo Inherente:** El resultado del cálculo inicial (antes de aplicar mitigaciones).\n2.  **Comparación:** El riesgo inherente se compara con el apetito de riesgo de la organización.\n3.  **Respuesta:** Si el riesgo evaluado supera el umbral (riesgo inaceptable), detona la necesidad imperativa de definir, seleccionar e implementar medidas de control para mitigarlo."
+              "content": "El núcleo operativo de la gestión de riesgos está compuesto por fases consecutivas:\n\n### 🔍 1. Identificación de riesgos\n\nEs el proceso de descubrimiento, reconocimiento y documentación de diferentes peligros.\n*   **Inventario de componentes:** Se recomienda comenzar identificando actores principales (científicos de datos), datos (sin procesar, entrenamiento, prueba), entornos, herramientas y procesos.\n*   **Amenazas asociadas:** Basándose en el contexto previo, se identifican amenazas que podrían explotar vulnerabilidades, como la discriminación por *sesgos algorítmicos* o la *filtración de información confidencial*.\n\n### 📈 2. Análisis y evaluación\n\nDetermina la criticidad asignando un valor cualitativo o numérico de **probabilidad de ocurrencia y nivel de impacto** a cada riesgo.\n\n1.  **Riesgo Inherente:** El resultado del cálculo inicial (antes de aplicar mitigaciones).\n2.  **Comparación:** El riesgo inherente se compara con el apetito de riesgo de la organización.\n3.  **Respuesta:** Si el riesgo evaluado supera el umbral (riesgo inaceptable), detona la necesidad imperativa de definir, seleccionar e implementar medidas de control para mitigarlo."
           },
           {
               "title": "Respuesta al riesgo y procedimientos de prueba",
-              "content": "Una vez que los riesgos se declaran inaceptables, se entra en la fase de **respuesta al riesgo**, donde se seleccionan opciones de tratamiento (evitar, transferir, mitigar o aceptar).\n\n### ⚖️ Prioridad de Mitigación (Reglamento IA)\n\nEl Reglamento establece un orden jerárquico para la adopción de medidas:\n\n1.  **Eliminar o reducir** riesgos mediante diseño técnico y desarrollo (seguridad por diseño).\n2.  **Mitigar y controlar** aquellos que no se puedan eliminar.\n3.  **Proporcionar información y formación** pertinente a los responsables del despliegue en última instancia.\n\nEl riesgo que subsiste después de aplicar estas medidas de control se denomina **riesgo residual**, el cual debe ser informado a los usuarios.\n\n### 🧪 Procedimientos de Prueba\n\nPara verificar la eficacia real de las medidas, el Reglamento exige someter los sistemas a rigurosos **procedimientos de prueba**.\n\n*   Incluyen evaluaciones en condiciones de uso real.\n*   Destinadas a comprobar que el sistema es coherente con su finalidad prevista y la normativa de gestión de riesgos.\n*   **Obligatoriedad:** Las pruebas deben realizarse durante el desarrollo e *indispensablemente antes* de la introducción del sistema al mercado, garantizando la seguridad plena del HRAIS."
+              "content": "Una vez que los riesgos se declaran inaceptables, se entra en la fase de **respuesta al riesgo**, donde se seleccionan opciones de tratamiento (evitar, transferir, mitigar o aceptar).\n\n### ⚖️ Prioridad de mitigación (Reglamento IA)\n\nEl Reglamento establece un orden jerárquico para la adopción de medidas:\n\n1.  **Eliminar o reducir** riesgos mediante diseño técnico y desarrollo (seguridad por diseño).\n2.  **Mitigar y controlar** aquellos que no se puedan eliminar.\n3.  **Proporcionar información y formación** pertinente a los responsables del despliegue en última instancia.\n\nEl riesgo que subsiste después de aplicar estas medidas de control se denomina **riesgo residual**, el cual debe ser informado a los usuarios.\n\n### 🧪 Procedimientos de prueba\n\nPara verificar la eficacia real de las medidas, el Reglamento exige someter los sistemas a rigurosos **procedimientos de prueba**.\n\n*   Incluyen evaluaciones en condiciones de uso real.\n*   Destinadas a comprobar que el sistema es coherente con su finalidad prevista y la normativa de gestión de riesgos.\n*   **Obligatoriedad:** Las pruebas deben realizarse durante el desarrollo e *indispensablemente antes* de la introducción del sistema al mercado, garantizando la seguridad plena del HRAIS."
           }
       ],
       "flashcards": [
@@ -1117,14 +1117,14 @@ export const guides: Guide[] = [
               "correctAnswer": 0
           },
           {
-              "question": "Un evento adverso documentado como un ataque de 'fuzzing' o envenenamiento de datos se considera inicialmente una :",
+              "question": "¿Cómo define la Guía 05 la técnica de 'fuzzing' en el contexto de la gestión de riesgos de sistemas de IA?",
               "options": [
-                  "Vulnerabilidad intrínseca del hardware.",
-                  "Amenaza a la que está expuesto el sistema.",
-                  "Medida de control preventivo.",
-                  "Técnica de mitigación de sesgos."
+                  "Una vulnerabilidad intrínseca del hardware del sistema.",
+                  "Una medida de control técnico para verificar la solidez del sistema.",
+                  "Una técnica de testeo automatizado utilizada como vector de ataque, que introduce datos inválidos, aleatorios o inesperados al sistema.",
+                  "Un proceso de evaluación del riesgo residual una vez desplegado el sistema."
               ],
-              "correctAnswer": 1
+              "correctAnswer": 2
           },
           {
               "question": "¿Qué acción es estrictamente necesaria tras haber implementado una medida de respuesta o tratamiento del riesgo en el sistema ?",
@@ -1415,217 +1415,209 @@ export const guides: Guide[] = [
       "summary": "Esta guía establece las prácticas de gobernanza y gestión de datos requeridas por el artículo 10 del Reglamento para sistemas de IA de alto riesgo. Cubre todo el ciclo de vida de los datos: desde la identificación de requisitos y recopilación, hasta su preparación (etiquetado, limpieza, agregación) y análisis de sesgos. Se enfoca en asegurar que los conjuntos de datos de entrenamiento, validación y prueba sean pertinentes, representativos, completos y libres de errores, garantizando así la calidad del sistema y evitando discriminaciones prohibidas.",
       "contentIndex": [
           {
-              "title": "Introducción y concepto de vigilancia poscomercialización",
-              "content": "El Reglamento Europeo de Inteligencia Artificial establece la necesidad de implementar un **plan de vigilancia poscomercialización** para los sistemas de IA de alto riesgo. *(Nota: Aunque la temática corresponde a la Guía 13, se desarrolla aquí su concepto fundamental)*.\n\n### 🔍 ¿Qué es un Sistema de Vigilancia Poscomercialización?\n\nSe define como un conjunto de procesos, actividades y herramientas diseñados y conducidos por el proveedor (y apoyados por el responsable del despliegue) para **recabar y evaluar sistemáticamente la experiencia obtenida del uso** del sistema una vez en el mercado.\n\n*   **Objetivo primordial:** Garantizar que los sistemas sigan siendo seguros, funcionen correctamente a lo largo de su ciclo de vida y cumplan continuamente con los requisitos legales.\n\n### ⚙️ Subsistemas Fundamentales\n\nEste mecanismo permite identificar tempranamente comportamientos anómalos o degradación del modelo, apoyándose en cuatro subsistemas:\n\n1.  **Sistemas de captación de indicadores:** Procesos automatizados que recopilan datos sobre rendimiento, infraestructura, interacciones de usuario y seguridad.\n2.  **Sistemas de registro de indicadores:** Almacenamiento seguro de logs y métricas generadas.\n3.  **Sistemas de alertas automatizadas:** Mecanismos que monitorean indicadores frente a umbrales preestablecidos para emitir avisos en tiempo real.\n4.  **Interfaces de análisis:** Herramientas (*dashboards* o paneles) que permiten explorar, analizar y auditar registros para la toma de decisiones informadas."
+              "title": "1. Preámbulo y estructura de la guía",
+              "content": "La Guía 07 aborda el **gobierno y gestión de los datos** tal como exige el **Artículo 10** del Reglamento Europeo de IA para los sistemas de alto riesgo.\n\n### 🎯 Objetivo\n\nEstablecer las bases para que los datos de entrenamiento, validación y prueba cumplan con rigurosos **criterios de calidad**, sean pertinentes, representativos, libres de errores y completos.\n\n### 📋 Estructura del documento\n\nLa guía se organiza en 9 capítulos principales:\n1. **Preámbulo:** Objetivo, audiencia y casos de uso.\n2. **Introducción:** Concepto de gobierno del dato y elementos de implantación.\n3. **Reglamento de IA:** Análisis de los artículos aplicables y su correspondencia.\n4. **Gestión de los datos:** Todo el ciclo de vida (recopilación, preparación, disposición, eliminación).\n5. **Otros elementos:** Tratamiento de categorías especiales de datos personales.\n6. **Documentación técnica.**\n7. **Cuestionario de autoevaluación.**\n8. **Anexos:** Métodos de recopilación, calidad del dato y sesgos.\n9. **Referencias, estándares y normas.**"
           },
           {
-              "title": "Requisitos del reglamento de IA (artículo 72)",
-              "content": "El marco normativo se fundamenta principalmente en el **Artículo 72** del Reglamento Europeo de IA, el cual establece obligaciones directas para los proveedores.\n\n### 📋 Recopilación Sistemática de Datos\n\nEl sistema de vigilancia debe recopilar, documentar y analizar de manera activa y sistemática todos los datos pertinentes (facilitados por los responsables del despliegue o mediante el propio uso del sistema).\n*   **Objetivo:** Evaluar si el sistema mantiene su conformidad normativa durante toda su vida útil.\n*   **Excepción importante:** Esta recopilación no debe incluir *datos operativos sensibles* cuando los responsables del despliegue sean autoridades garantes del cumplimiento del Derecho (ej. policiales o judiciales).\n\n### 📑 Plan Formal y Documentación\n\nEste sistema se basará en un **'plan de vigilancia poscomercialización'** formal, que pasará a formar parte integral de la *Documentación Técnica* exigida en el Anexo IV.\n\n> 💡 **Integración con otras normativas:** Para aquellos proveedores que ya operan bajo legislaciones sectoriales específicas (entidades financieras o productos del Anexo I), el Reglamento permite *integrar* el plan de vigilancia dentro de sus sistemas de gestión internos, siempre que se garantice un nivel de protección equivalente."
+              "title": "2. Introducción: el gobierno del dato en la IA",
+              "content": "En el contexto de la IA, el **gobierno del dato** se define como el conjunto de políticas, procedimientos, procesos y normas que se implementan para garantizar que los datos utilizados en el entrenamiento, validación y prueba de los sistemas son **adecuados, pertinentes, suficientemente representativos y cumplen los requisitos de calidad**.\n\n### ⚠️ Impacto de una mala gobernanza\n\nLa falta de gobernanza adecuada puede conducir a **resultados sesgados o inexactos**, materializándose en riesgos para la salud, seguridad o **derechos fundamentales** de las personas.\n\n### 📌 Artículo 10 — Requisitos clave\n\nEl Artículo 10 del RIA establece que los conjuntos de datos deben someterse a las siguientes prácticas:\n*   Elección de un diseño adecuado.\n*   Procesos de recopilación y declaración del origen de los datos.\n*   Operaciones de tratamiento: anotación, etiquetado, depuración, actualización, enriquecimiento y agregación.\n*   Evaluación de disponibilidad, cantidad y adecuación.\n*   Análisis y mitigación de posibles sesgos que puedan afectar a la salud, seguridad o discriminación."
           },
           {
-              "title": "Diseño e implementación del sistema y plan de vigilancia",
-              "content": "Para implementar el sistema, el proveedor debe ejecutar una serie de pasos:\n1.  **Selección de indicadores:** Basados en la gestión de riesgos, estableciendo *escalas de normalidad*.\n2.  **Desarrollo de captación y envío:** Extracción de datos de los logs temporales.\n3.  **Almacenamiento seguro:** En un sistema de registros con políticas de control de acceso y retención.\n\n### 🏗️ Áreas Clave del Plan de Vigilancia\n\nSobre esta base técnica, se construye el Plan de Vigilancia contemplando:\n\n*   ⏱️ **Vigilancia Continua:** Monitoreo en tiempo real del rendimiento en producción (identifica cuellos de botella o fallos de seguridad inmediatos).\n*   📅 **Vigilancia Periódica:** Evaluaciones regulares no en tiempo real. Incluye pruebas de precisión a largo plazo, análisis de falsos positivos y detección de derivas o *data drift*.\n*   📝 **Informes de Incidentes:** Procedimientos estandarizados. Deben contener un extracto histórico de registros y notas de los supervisores.\n*   🗣️ **Comunicación y Capacitación:** Proveer información clara a los responsables (paneles) y capacitar sobre el uso de la herramienta.\n*   🔄 **Flexibilidad:** Adaptarse ante cambios organizacionales o variaciones en la arquitectura técnica requiriendo revisión periódica."
+              "title": "4. Gestión de los datos: ciclo de vida completo",
+              "content": "El núcleo de la guía describe en detalle las etapas del **ciclo de vida de los datos**:\n\n### 📥 Recopilación de los datos\n\nSe deben documentar la fuente y el método de recopilación (ver Anexo A). En el caso de datos personales, debe justificarse la finalidad original de su recogida.\n\n### 🛠️ Preparación de los datos (subapartados 4.3.1 a 4.3.8)\n\nEsta es la fase más extensa e incluye:\n*   **Medición y mejora de la calidad** (dimensiones: completitud, consistencia, precisión, equilibrio, diversidad, etc.).\n*   **Transformación, agregación y muestreo.**\n*   **Creación y selección de características** (*feature engineering*).\n*   **Enriquecimiento** de los conjuntos de datos.\n*   **Etiquetado y anotación:** Los datos etiquetados automáticamente no deben asumirse como correctos. Se requiere validación por muestra aleatoria.\n*   **Análisis de sesgos:** Identificar fuentes de sesgo (contextual, cultural, algorítmico) y aplicar métricas de mitigación.\n\n### 📤 Disposición y eliminación\n\nCada dato tiene un período de conservación definido. Los datos deben eliminarse cuando se corrija el sesgo o finalice su período de retención."
           },
           {
-              "title": "Conexiones con otras áreas y documentación técnica",
-              "content": "El sistema de vigilancia poscomercialización es transversal y debe integrarse con otros requerimientos del Reglamento:\n\n*   **Gestión de Riesgos:** Las métricas anómalas retroalimentan el sistema de evaluación de riesgos inicial para actualizarlo constantemente.\n*   **Registros y Supervisión Humana:** La vigilancia dicta *qué* indicadores recabar, la normativa establece *cómo* guardarlos, todo ello para que el supervisor humano tenga herramientas e interfaces para interpretar el modelo.\n*   **Precisión, Solidez y Ciberseguridad:** Debe monitorizar a lo largo del ciclo vital posibles degradaciones en estos tres pilares.\n\n### 📚 Documentación Técnica (Anexo IV y Art. 9)\n\nSe exige documentar minuciosamente tanto el sistema técnico como el plan estratégico. Esto incluye:\n\n1.  **Listado de indicadores** seleccionados junto a sus escalas de normalidad (e.g. predicciones por minuto, uso CPU, tasa de errores).\n2.  **Tecnologías** empleadas de captación, formatos de registro y umbrales de alerta.\n3.  **Acciones programadas** de vigilancia continua y periódica.\n4.  **Registros formativos** y plantillas de informes de incidentes."
+              "title": "5. Categorías especiales de datos personales (Art. 10.5)",
+              "content": "Como medida excepcional, el **Artículo 10.5** del RIA permite tratar categorías especiales de datos personales en la medida en que sea **estrictamente necesario** para garantizar la detección y corrección de sesgos en sistemas de alto riesgo.\n\n### 🔒 Salvaguardias obligatorias\n\nPara que este tratamiento sea lícito, deben cumplirse todas las siguientes condiciones:\n\n1.  Los datos sintéticos o anonimizados **no son suficientes** para detectar el sesgo.\n2.  Establecer **limitaciones técnicas de reutilización** y aplicar **seudonimización** y cifrado.\n3.  Garantizar controles de acceso estrictos con trazabilidad de quién accede.\n4.  Los datos **no pueden transmitirse ni transferirse** a terceros bajo ninguna forma.\n5.  Los datos **deben eliminarse de inmediato** al corregir el sesgo o al fin de su período de conservación.\n6.  Mantener **registros de actividad** que justifiquen por qué el uso era estrictamente necesario.\n\n> ⚠️ Siempre que sea posible sin afectar la finalidad del tratamiento, debe priorizarse la **anonimización** completa sobre la mera seudonimización."
           }
       ],
       "flashcards": [
           {
-              "front": "¿Qué es un sistema de vigilancia poscomercialización de IA?",
-              "back": "Es un conjunto de procesos y herramientas para recabar y evaluar datos de un sistema de IA de alto riesgo tras su lanzamiento, con el fin de asegurar su correcto funcionamiento continuo y detectar riesgos tempranamente."
+              "front": "¿Qué artículo del Reglamento de IA regula los datos y la gobernanza de datos?",
+              "back": "El Artículo 10, que establece los criterios de calidad y las prácticas de gobernanza para los datos de entrenamiento, validación y prueba de los sistemas de IA de alto riesgo."
           },
           {
-              "front": "¿A quién va dirigida principalmente la obligación de establecer el sistema de vigilancia poscomercialización?",
-              "back": "Principalmente al proveedor del sistema de IA, quien debe evaluarlo durante todo el ciclo de vida, aunque el responsable del despliegue debe notificar incidentes."
+              "front": "¿Cómo define la Guía 07 el 'gobierno del dato' en el contexto de la IA?",
+              "back": "Conjunto de políticas, procedimientos, procesos y normas para garantizar que los datos usados en IA son adecuados, pertinentes, suficientemente representativos y cumplen los requisitos de calidad establecidos."
           },
           {
-              "front": "¿Qué artículo del Reglamento de IA regula el plan y sistema de vigilancia poscomercialización?",
-              "back": "El artículo 72 del Reglamento Europeo de Inteligencia Artificial."
+              "front": "¿Qué tres tipos de conjuntos de datos deben cumplir con los criterios de calidad del Art. 10?",
+              "back": "Los conjuntos de datos de entrenamiento, de validación y de prueba."
           },
           {
-              "front": "¿Cuáles son los cuatro subsistemas básicos de un sistema de vigilancia poscomercialización?",
-              "back": "1. Sistemas de captación de indicadores. 2. Sistemas de registro de indicadores. 3. Sistema de alertas automatizadas. 4. Interfaces de análisis para supervisores."
+              "front": "¿Qué es el etiquetado de datos o anotación en el contexto de la gobernanza de datos?",
+              "back": "El proceso mediante el cual se asignan etiquetas identificativas a los datos recabados. Los datos etiquetados de forma automática no deben asumirse como correctos y deben validarse por muestra aleatoria."
           },
           {
-              "front": "¿Qué es la vigilancia continua en el contexto de la IA?",
-              "back": "Es el monitoreo en tiempo real del rendimiento y comportamiento del sistema de IA en un entorno de producción para detectar y corregir problemas de manera inmediata."
+              "front": "¿Qué dimensiones de calidad del dato se analizan según el Anexo B.1 de la Guía 07?",
+              "back": "Completitud, consistencia, accesibilidad, auditabilidad, identificabilidad, portabilidad, precisión, cumplimiento normativo, credibilidad, equilibrio, imparcialidad, semántica y diversidad, entre otras."
           },
           {
-              "front": "¿En qué consiste la vigilancia periódica?",
-              "back": "En realizar evaluaciones regulares a más largo plazo (no en tiempo real), como pruebas de precisión, análisis de errores acumulados y detección de desviaciones del modelo."
+              "front": "¿Bajo qué condición excepcional permite el Art. 10.5 tratar categorías especiales de datos personales?",
+              "back": "Cuando sea estrictamente necesario para garantizar la detección y corrección de sesgos en sistemas de IA de alto riesgo, y siempre que los datos sintéticos o anonimizados no sean suficientes para ello."
           },
           {
-              "front": "¿Qué información clave debe incluir un informe de incidentes generado en la fase de vigilancia?",
-              "back": "Características y objetivos del sistema, descripción del comportamiento anómalo detectado, un extracto del histórico de registros e indicadores, y notas contextuales de los supervisores."
+              "front": "¿Qué obligación existe sobre los datos de categorías especiales una vez corregido el sesgo?",
+              "back": "Deben eliminarse de inmediato cuando se haya corregido el sesgo o cuando haya llegado al final de su período de conservación."
           },
           {
-              "front": "¿Cómo se relaciona la vigilancia poscomercialización con la gestión de riesgos?",
-              "back": "Los indicadores a vigilar se diseñan basándose en la evaluación de riesgos previa. A su vez, los incidentes detectados en la vigilancia sirven para actualizar y retroalimentar el sistema de riesgos."
+              "front": "¿Cuáles son las tres dimensiones sobre las que el Art. 10 exige revisar los datos para evitar riesgos?",
+              "back": "Los riesgos que puedan afectar a la salud, la seguridad y los derechos fundamentales de las personas."
           },
           {
-              "front": "¿Qué exención tienen las autoridades garantes del cumplimiento del Derecho respecto a la vigilancia poscomercialización?",
-              "back": "La obligación de recopilación de datos para la vigilancia poscomercialización no comprenderá los datos operativos sensibles de estas autoridades."
+              "front": "¿Qué es el análisis de sesgos según la Guía 07?",
+              "back": "El examen de los datos para identificar posibles sesgos que puedan dar lugar a discriminación prohibida o afectar negativamente los derechos fundamentales, usando métricas estadísticas y aplicando medidas de mitigación."
           },
           {
-              "front": "Menciona dos ejemplos de indicadores de vigilancia sobre el propio sistema inteligente.",
-              "back": "Número de predicciones realizadas por unidad de tiempo, tasa de errores de predicción, o el tiempo de ejecución de las inferencias."
-          },
-          {
-              "front": "Menciona dos ejemplos de indicadores de vigilancia enfocados en la infraestructura.",
-              "back": "Porcentaje de uso de la CPU, consumo de memoria RAM, temperatura del sistema o tráfico de red."
-          },
-          {
-              "front": "¿Dónde debe incluirse obligatoriamente el Plan de vigilancia poscomercialización?",
-              "back": "Debe formar parte de la Documentación Técnica del sistema de IA, tal como se refiere en el Anexo IV del Reglamento."
+              "front": "¿Qué es la seudonimización aplicada a categorías especiales de datos?",
+              "back": "Una medida de seguridad que sustituye los datos identificativos directos por pseudónimos, de modo que los datos no puedan atribuirse a una persona específica sin información adicional."
           }
       ],
       "quiz": [
           {
-              "question": "¿A qué actor le corresponde la obligación principal de establecer, documentar e implementar el sistema de vigilancia poscomercialización?",
-              "options": [
-                  "Al proveedor del sistema de IA",
-                  "Al responsable del despliegue",
-                  "A la autoridad nacional competente",
-                  "A los usuarios finales del sistema"
-              ],
-              "correctAnswer": 0
-          },
-          {
-              "question": "¿Qué artículo del Reglamento de Inteligencia Artificial exige la creación del plan de vigilancia poscomercialización?",
+              "question": "¿Qué artículo del Reglamento de IA (AI Act) establece los requisitos de datos y gobernanza para sistemas de alto riesgo?",
               "options": [
                   "Artículo 9",
-                  "Artículo 15",
-                  "Artículo 72",
-                  "Artículo 11"
-              ],
-              "correctAnswer": 2
-          },
-          {
-              "question": "En la evaluación de la vigilancia poscomercialización, ¿qué tipo de datos están exentos de ser recopilados si el responsable del despliegue es una autoridad judicial o policial?",
-              "options": [
-                  "Los datos sobre uso de memoria RAM",
-                  "Los registros de temperatura del servidor",
-                  "Los datos operativos sensibles",
-                  "Las métricas de latencia de red"
-              ],
-              "correctAnswer": 2
-          },
-          {
-              "question": "¿Qué evalúa principalmente el mecanismo de 'Vigilancia Periódica'?",
-              "options": [
-                  "Las alertas instantáneas por picos de CPU",
-                  "El rendimiento a largo plazo, la precisión y posibles sesgos retrospectivos",
-                  "La autenticación en tiempo real del administrador",
-                  "La caída de tensión eléctrica en la sala de servidores"
+                  "Artículo 10",
+                  "Artículo 13",
+                  "Artículo 72"
               ],
               "correctAnswer": 1
           },
           {
-              "question": "Dentro del informe de incidentes, ¿qué elemento es imprescindible para contextualizar la alerta?",
+              "question": "Según el Art. 10, los conjuntos de datos que utilicen los HRAIS deben ser pertinentes y, en la mayor medida posible:",
               "options": [
-                  "El código fuente completo del algoritmo",
-                  "Los nombres y apellidos de todos los usuarios de la herramienta",
-                  "Extracto del histórico de registros (logs) e indicadores",
-                  "Un contrato comercial firmado con el proveedor"
-              ],
-              "correctAnswer": 2
-          },
-          {
-              "question": "¿Cómo se vincula el sistema de vigilancia con el Sistema de Gestión de Riesgos (Art. 9)?",
-              "options": [
-                  "Son incompatibles y deben gestionarse en sistemas separados",
-                  "La vigilancia diseña el código y riesgos lo audita",
-                  "Los indicadores de vigilancia se definen basándose en los riesgos evaluados previamente",
-                  "El sistema de riesgos solo aplica antes de la comercialización y no interactúa con la vigilancia"
-              ],
-              "correctAnswer": 2
-          },
-          {
-              "question": "Según los anexos de indicadores de vigilancia, el 'Uso de CPU' o 'Tráfico de red' corresponden a la categoría de indicadores de:",
-              "options": [
-                  "Seguridad informática",
-                  "Infraestructura",
-                  "Acciones de los usuarios",
-                  "Precisión del sistema inteligente"
+                  "Masivos y completos, sin importar los sesgos.",
+                  "Carecer de errores, estar completos y ser suficientemente representativos.",
+                  "Provenir exclusivamente de fuentes gubernamentales europeas.",
+                  "Ser de código abierto y verificados por organismos independientes."
               ],
               "correctAnswer": 1
           },
           {
-              "question": "¿Qué debe hacer el sistema de alertas automatizadas dentro de la vigilancia poscomercialización?",
+              "question": "¿Cuál de las siguientes NO es una operación de preparación de datos incluida en el Art. 10 del Reglamento de IA?",
               "options": [
-                  "Apagar el sistema de forma irreversible ante cualquier uso",
-                  "Modificar automáticamente el código fuente en producción",
-                  "Vigilar variaciones de indicadores frente a escalas preestablecidas para emitir avisos",
-                  "Borrar los registros de datos tras 24 horas"
+                  "Anotación y etiquetado.",
+                  "Depuración y actualización.",
+                  "Monetización y licenciamiento.",
+                  "Enriquecimiento y agregación."
               ],
               "correctAnswer": 2
           },
           {
-              "question": "Si el proveedor implementa una actualización crítica o hay cambios organizativos en su empresa, la característica del plan de vigilancia que le obliga a ajustar procesos y notificaciones se denomina:",
+              "question": "Cuando se utiliza el etiquetado automático de datos, la Guía 07 establece que:",
               "options": [
-                  "Flexibilidad",
-                  "Explicabilidad",
-                  "Evaluación estática",
-                  "Interrupción forzada"
+                  "Los datos automáticos se asumen como correctos si el modelo tiene más de un 90% de precisión.",
+                  "No se necesita validación posterior si el proveedor ha documentado el proceso.",
+                  "Los datos etiquetados automáticamente NO deben asumirse como correctos y deben validarse por muestra aleatoria.",
+                  "El etiquetado automático está prohibido por el Reglamento de IA."
               ],
-              "correctAnswer": 0
+              "correctAnswer": 2
           },
           {
-              "question": "¿A qué documento más grande debe pertenecer obligatoriamente el Plan de Vigilancia Poscomercialización?",
+              "question": "El Artículo 10.5 permite tratar categorías especiales de datos personales. ¿Para qué finalidad específica?",
               "options": [
-                  "Al manual de marketing",
-                  "A la Documentación Técnica (Anexo IV)",
-                  "A los estatutos de la empresa proveedora",
-                  "Al registro nacional de patentes"
+                  "Para entrenar modelos de lenguaje de propósito general (GPAI).",
+                  "Para la detección y corrección de sesgos en sistemas de IA de alto riesgo.",
+                  "Para la vigilancia poscomercialización del sistema.",
+                  "Para la evaluación de conformidad ante organismos notificados."
               ],
               "correctAnswer": 1
+          },
+          {
+              "question": "Respecto a las categorías especiales de datos del Art. 10.5, ¿cuál de estas afirmaciones es CORRECTA?",
+              "options": [
+                  "Pueden transmitirse a terceros si hay un contrato de encargo de tratamiento.",
+                  "Solo deben eliminarse si el responsable de tratamiento lo solicita expresamente.",
+                  "Deben eliminarse de inmediato una vez corregido el sesgo o al final de su período de conservación.",
+                  "Pueden conservarse indefinidamente para futuros proyectos de investigación."
+              ],
+              "correctAnswer": 2
+          },
+          {
+              "question": "¿Qué es la calidad del dato en el marco de la gobernanza de IA según la Guía 07?",
+              "options": [
+                  "El tamaño máximo en gigabytes que puede almacenar el conjunto de datos.",
+                  "Un conjunto de dimensiones como completitud, consistencia y precisión que deben analizarse para cada dato.",
+                  "La velocidad a la que se generan nuevos datos para entrenar el modelo.",
+                  "El porcentaje mínimo de datos de validación respecto al total del dataset."
+              ],
+              "correctAnswer": 1
+          },
+          {
+              "question": "¿Qué garantiza el proceso de análisis de sesgos exigido por el Artículo 10?",
+              "options": [
+                  "Que el modelo alcance un F1 Score superior al 95%.",
+                  "Que los datos no excedan el tamaño máximo de almacenamiento permitido.",
+                  "Que se identifiquen y mitiguen posibles sesgos que puedan dar lugar a discriminación o afectar a los derechos fundamentales.",
+                  "Que todos los datos sean verificados por un organismo notificado externo."
+              ],
+              "correctAnswer": 2
+          },
+          {
+              "question": "¿Cuál es el primer requisito que debe fallar para que sea lícito tratar categorías especiales de datos bajo el Art. 10.5?",
+              "options": [
+                  "Que el sistema de IA haya sido certificado por un organismo notificado.",
+                  "Que los datos sintéticos o anonimizados no permitan detectar o corregir el sesgo de forma efectiva.",
+                  "Que la empresa proveedora tenga más de 250 empleados.",
+                  "Que el sistema sea de aplicación en el sector público."
+              ],
+              "correctAnswer": 1
+          },
+          {
+              "question": "¿Qué dice la Guía 07 sobre la transmisión de datos de categorías especiales a terceros?",
+              "options": [
+                  "Puede hacerse si se firma un acuerdo de confidencialidad.",
+                  "Está permitida si el tercero es una autoridad pública europea.",
+                  "Los datos no pueden transmitirse ni transferirse a terceros bajo ninguna forma.",
+                  "Puede hacerse después de un período de conservación de 6 meses."
+              ],
+              "correctAnswer": 2
           }
       ],
-      "pdfUrl": "https://aesia.digital.gob.es/storage/media/07-guia-de-datos-y-gobernanza-de-datos.pdf",
       "glossary": [
           {
-              "term": "Sistema de vigilancia poscomercialización",
-              "definition": "Conjunto de procesos, herramientas y actividades orientados a recabar datos y evaluar el rendimiento y seguridad de un sistema de IA tras su lanzamiento al mercado, garantizando su cumplimiento legal continuo."
+              "term": "Gobierno del dato",
+              "definition": "Conjunto de políticas, procedimientos, procesos y normas implementados para garantizar que los datos utilizados en IA son adecuados, pertinentes, representativos y cumplen los requisitos de calidad y completitud exigidos por el Reglamento."
           },
           {
-              "term": "Plan de vigilancia poscomercialización",
-              "definition": "Documento estratégico que forma parte de la documentación técnica del sistema, en el cual se detallan las actividades, métricas y procedimientos a seguir para la recolección y análisis de la experiencia de uso del sistema de IA."
+              "term": "Conjuntos de datos de entrenamiento",
+              "definition": "Datos utilizados para ajustar los parámetros del modelo de IA. Según el Art. 10, deben ser pertinentes, representativos, libres de errores y completos en vista de la finalidad prevista del sistema."
           },
           {
-              "term": "Indicador de vigilancia",
-              "definition": "Dato medible situado dentro de una escala o umbral predefinido, utilizado para evaluar un aspecto específico del rendimiento, infraestructura o seguridad del sistema de IA."
+              "term": "Etiquetado de datos (Anotación)",
+              "definition": "Proceso por el que se asignan etiquetas identificativas a los datos. Los datos etiquetados automáticamente no deben asumirse como correctos y requieren validación por muestra aleatoria representativa."
           },
           {
-              "term": "Vigilancia continua",
-              "definition": "Supervisión constante y en tiempo real del comportamiento operativo y de infraestructura del sistema de IA, diseñada para detectar y alertar sobre problemas críticos de forma inmediata."
+              "term": "Sesgo algorítmico",
+              "definition": "Error sistemático en los datos o el modelo que produce resultados injustos o discriminatorios. El Art. 10 obliga a identificar y mitigar los sesgos que puedan afectar a la salud, seguridad o derechos fundamentales."
           },
           {
-              "term": "Vigilancia periódica",
-              "definition": "Evaluaciones programadas y recurrentes que analizan métricas a largo plazo (como la precisión del modelo o la aparición de sesgos), no observables eficazmente en tiempo real."
+              "term": "Categorías especiales de datos personales",
+              "definition": "Datos especialmente sensibles como los relativos al origen étnico, creencias, salud o biometría. El Art. 10.5 permite su tratamiento solo de forma estrictamente necesaria para corregir sesgos, con salvaguardias muy estrictas."
           },
           {
-              "term": "Informe de incidentes",
-              "definition": "Documento estandarizado generado tras la detección de un comportamiento anómalo. Incluye contexto, extractos de logs de sistema, descripción del error y notas de los analistas."
+              "term": "Seudonimización",
+              "definition": "Medida de seguridad que sustituye los identificadores directos de los datos por pseudónimos, de modo que los datos no pueden atribuirse directamente a una persona sin información adicional."
           },
           {
-              "term": "Sistema de alertas automatizadas",
-              "definition": "Subsistema técnico que compara constantemente el flujo de datos y registros entrantes contra escalas de normalidad, emitiendo notificaciones cuando se superan ciertos umbrales de riesgo."
+              "term": "Calidad del dato",
+              "definition": "Conjunto de dimensiones que determinan la idoneidad de un dato: completitud, consistencia, accesibilidad, precisión, equilibrio, diversidad, imparcialidad, entre otras. Deben analizarse de forma individual para cada dato."
           },
           {
-              "term": "Interfaz de análisis",
-              "definition": "Panel de control, dashboard o herramienta visual que permite a los supervisores humanos explorar, auditar y comprender los registros e indicadores generados por el sistema de IA."
+              "term": "Riesgo de sesgo",
+              "definition": "Posibilidad de que los datos de entrenamiento o el modelo produzcan resultados que discriminen a grupos de personas o vulneren sus derechos fundamentales. Debe identificarse y mitigarse activamente según el Art. 10."
           },
           {
-              "term": "Subsistema de captación",
-              "definition": "Procesos informáticos integrados encargados de recolectar los registros (logs) brutos emitidos por el modelo de IA o la infraestructura para enviarlos al almacén de análisis."
+              "term": "Disposición de los datos",
+              "definition": "Etapa del ciclo de vida del dato en la que se define su almacenamiento, acceso, uso continuado y eventual eliminación, asegurando su gestión conforme a los principios de minimización y privacidad."
           },
           {
-              "term": "Escala de normalidad",
-              "definition": "Rango de valores aceptables y esperados para un indicador específico (ej. uso de CPU entre 10% y 70%), cuya desviación indica una potencial anomalía de funcionamiento o riesgo."
+              "term": "Anonimización",
+              "definition": "Proceso por el que se eliminan o modifican los datos de forma que la persona a la que se refieren no pueda ser identificada directa ni indirectamente. Tiene preferencia sobre la seudonimización cuando la finalidad lo permite."
           }
-      ]
+      ],
+      "pdfUrl": "https://aesia.digital.gob.es/storage/media/07-guia-de-datos-y-gobernanza-de-datos.pdf"
   },
   {
       "id": "08",
@@ -2946,23 +2938,23 @@ export const guides: Guide[] = [
   {
       "id": "14",
       "title": "Guía gestión de incidentes",
-      "summary": "Esta guía explica el procedimiento del artículo 73 para la notificación de incidentes graves relacionados con sistemas de IA de alto riesgo. Define qué constituye un incidente grave (muerte, daños graves a la salud, propiedad, medio ambiente o derechos fundamentales) y establece los plazos estrictos para su comunicación a las autoridades de vigilancia del mercado: 15 días para incidentes generales, 2 días en caso de amenaza inminente y 10 días en caso de muerte. También detalla el flujo de investigación y las excepciones para ciertos sectores.",
+      "summary": "Esta guía explica el procedimiento del artículo 73 para la notificación de incidentes graves relacionados con sistemas de IA de alto riesgo. Define qué constituye un incidente grave (muerte, daños graves a la salud, propiedad, medio ambiente o derechos fundamentales) y establece los plazos estrictos para su comunicación a las autoridades de vigilancia del mercado: 15 días para incidentes graves en general, 10 días en caso de fallecimiento (Art. 73.4) y 2 días para infraestructuras críticas o infracción generalizada (Art. 73.3). También detalla el flujo de investigación y las excepciones para ciertos sectores.",
       "contentIndex": [
           {
               "title": "Introducción y concepto de incidente grave",
-              "content": "La Guía 14 de las Guías AESIA está dedicada a la \"Gestión de Incidentes\" (el Artículo 73 del Reglamento de IA de alto riesgo aborda la notificación de estos). Un **«incidente grave»** se define como un suceso o defecto de funcionamiento del sistema que, directa o indirectamente, tenga consecuencias severas, como:\n\n*   Fallecimiento de una persona o daños graves para la salud.\n*   Alteraciones graves y potencialmente irreversibles en infraestructuras críticas.\n*   Incumplimiento de las obligaciones de Derecho de la Unión para proteger los derechos fundamentales.\n*   Daños graves a la propiedad o al medio ambiente.\n\n### ⏱️ Proceso de Gestión\n\nLa gestión de incidentes es un **proceso continuo** que implica:\n1.  Monitorización constante tras su comercialización.\n2.  Detección de la anomalía.\n3.  Establecimiento de vínculo causal (sistema-incidente).\n4.  Notificación inmediata y cooperación constante en las investigaciones subsiguientes."
+              "content": "La Guía 14 de las Guías AESIA está dedicada a la \"Gestión de Incidentes\" (el Artículo 73 del Reglamento de IA de alto riesgo aborda la notificación de estos). Un **«incidente grave»** se define como un suceso o defecto de funcionamiento del sistema que, directa o indirectamente, tenga consecuencias severas, como:\n\n*   Fallecimiento de una persona o daños graves para la salud.\n*   Alteraciones graves y potencialmente irreversibles en infraestructuras críticas.\n*   Incumplimiento de las obligaciones de Derecho de la Unión para proteger los derechos fundamentales.\n*   Daños graves a la propiedad o al medio ambiente.\n\n### ⏱️ Proceso de gestión\n\nLa gestión de incidentes es un **proceso continuo** que implica:\n1.  Monitorización constante tras su comercialización.\n2.  Detección de la anomalía.\n3.  Establecimiento de vínculo causal (sistema-incidente).\n4.  Notificación inmediata y cooperación constante en las investigaciones subsiguientes."
           },
           {
               "title": "Obligaciones y requisitos de notificación",
-              "content": "El Artículo 73 establece directrices estrictas para los proveedores. La regla general dicta que todo incidente grave debe ser notificado **inmediatamente** después de que el proveedor logre establecer un vínculo causal (o una posibilidad razonable). En ningún caso se excederán los **15 días** desde el conocimiento inicial del incidente.\n\n### 🚨 Plazos Estrictos por Severidad\n\n*   **Fallecimiento o daño grave a la salud:** Notificación en un plazo máximo de **2 días** tras establecer el vínculo a Autoridades de Vigilancia del Mercado (AVM).\n*   **Vulneración de Derechos Fundamentales:** Plazo máximo de notificación establecido en **10 días**.\n\n### ⚖️ Excepciones y Cooperación\n\nExisten excepciones, como en las infraestructuras críticas, donde la notificación puede retrasarse temporalmente si realizarla de inmediato obstaculizara mitigaciones críticas.\nLos proveedores deben cooperar plenamente con las autoridades en investigaciones, garantizando transparencia."
+              "content": "El Artículo 73 establece directrices estrictas para los proveedores. La regla general dicta que todo incidente grave debe ser notificado **inmediatamente** después de que el proveedor logre establecer un vínculo causal (o una posibilidad razonable). En ningún caso se excederán los **15 días** desde el conocimiento inicial del incidente (Artículo 73.2).\n\n### 🚨 Plazos estrictos por severidad (Artículo 73)\n\n*   **Plazo general — resto de incidentes graves (Art. 73.2):** Notificación en un plazo máximo de **15 días** desde el conocimiento del incidente. Se aplica también a vulneraciones de **Derechos Fundamentales**.\n*   **Fallecimiento de una persona (Art. 73.4):** El plazo se acorta a un máximo de **10 días** desde el conocimiento del incidente. La notificación debe ser inmediata en cuanto se sospeche o establezca la relación causal.\n*   **Infracción generalizada o incidente en infraestructuras críticas (Art. 73.3):** El plazo más breve es de **2 días**, dado el carácter urgente y de alta afectación de estos casos.\n\n### ⚖️ Excepciones y cooperación\n\nEn el caso de infraestructuras críticas, si notificar de inmediato obstaculizara la mitigación de daños urgentes, el Reglamento permite una breve demora que no exceda en ningún caso el plazo de 2 días.\nLos proveedores deben cooperar plenamente con las autoridades en investigaciones, garantizando transparencia."
           },
           {
               "title": "Procedimiento y medidas aplicables para la gestión de incidentes",
-              "content": "Para abordar la notificación de forma efectiva, tanto proveedores como responsables de despliegue deben integrar operativas clave.\n\n### 🔄 Sistema de Gestión de Calidad (SGC)\n\nEnmarcar la notificación de incidentes dentro del SGC de la organización. Deben existir protocolos de actuación, así como cadenas de responsabilidad para actuar con rapidez y eficacia frente a cualquier contingencia.\n\n### 📞 Comunicación Bidireccional Ágil\n\nEs indispensable asegurar un contacto fluyente y directo:\n\n*   El responsable del despliegue (usuario directo y primero en la línea de detección) debe informar al proveedor inmediatamente.\n*   El conocimiento y asignación del **Punto de Contacto Oficial** de la Autoridad de Vigilancia del Mercado (AVM) debe ser prioritario.\n\n### 🛡️ Nivel de Categorización\n\nResulta imprescindible conocer la categorización exacta del sistema IA según los Anexos del RIA, de los que dependen las notificaciones aplicables y sus exenciones. Los responsables también deben evaluar el grado potencial de afectación sobre los Derechos Fundamentales."
+              "content": "Para abordar la notificación de forma efectiva, tanto proveedores como responsables de despliegue deben integrar operativas clave.\n\n### 🔄 Sistema de gestión de calidad (SGC)\n\nEnmarcar la notificación de incidentes dentro del SGC de la organización. Deben existir protocolos de actuación, así como cadenas de responsabilidad para actuar con rapidez y eficacia frente a cualquier contingencia.\n\n### 📞 Comunicación bidireccional ágil\n\nEs indispensable asegurar un contacto fluyente y directo:\n\n*   El responsable del despliegue (usuario directo y primero en la línea de detección) debe informar al proveedor inmediatamente.\n*   El conocimiento y asignación del **Punto de Contacto Oficial** de la Autoridad de Vigilancia del Mercado (AVM) debe ser prioritario.\n\n### 🛡️ Nivel de categorización\n\nResulta imprescindible conocer la categorización exacta del sistema IA según los Anexos del RIA, de los que dependen las notificaciones aplicables y sus exenciones. Los responsables también deben evaluar el grado potencial de afectación sobre los Derechos Fundamentales."
           },
           {
               "title": "Documentación técnica y relación con el sistema de gestión de calidad",
-              "content": "El cumplimiento de todas las responsabilidades del sistema debe quedar reflejado de manera exhaustiva en la **Documentación Técnica** exigida en el Artículo 11 y el Anexo IV. Debe mantenerse viva y actualizada.\n\n### 📝 Contenidos Documentales Críticos\n\nLa documentación en el contexto de gestión de incidentes debe incluir:\n\n*   **Procedimientos operativos:** Reglas y flujos de notificación que se enmarcan fuertemente integrados en el Sistema de Gestión de la Calidad.\n*   **Manuales de usuario:** Información detallada de los canales de comunicación hacia los responsables para soporte rápido.\n*   **Información y anexos institucionales:** Contacto oficial con la Autoridad de Vigilancia del Mercado e información que establezca el nivel de riesgo correspondiente según legislaciones competentes (CE).\n*   **Evaluación y Concienciación general:** Documentos corporativos que avalen la formación y concientización sobre Derechos Fundamentales de la UE en el seno de la entidad para el manejo crítico de incidentes."
+              "content": "El cumplimiento de todas las responsabilidades del sistema debe quedar reflejado de manera exhaustiva en la **Documentación Técnica** exigida en el Artículo 11 y el Anexo IV. Debe mantenerse viva y actualizada.\n\n### 📝 Contenidos documentales críticos\n\nLa documentación en el contexto de gestión de incidentes debe incluir:\n\n*   **Procedimientos operativos:** Reglas y flujos de notificación que se enmarcan fuertemente integrados en el Sistema de Gestión de la Calidad.\n*   **Manuales de usuario:** Información detallada de los canales de comunicación hacia los responsables para soporte rápido.\n*   **Información y anexos institucionales:** Contacto oficial con la Autoridad de Vigilancia del Mercado e información que establezca el nivel de riesgo correspondiente según legislaciones competentes (CE).\n*   **Evaluación y Concienciación general:** Documentos corporativos que avalen la formación y concientización sobre Derechos Fundamentales de la UE en el seno de la entidad para el manejo crítico de incidentes."
           }
       ],
       "flashcards": [
@@ -2979,12 +2971,12 @@ export const guides: Guide[] = [
               "back": "Máximo 15 días desde que se establece un vínculo causal (o posibilidad razonable) entre el sistema de IA y el incidente."
           },
           {
-              "front": "¿Qué plazo aplica si un incidente grave resulta en fallecimiento o daño grave a la salud?",
-              "back": "Debe notificarse inmediatamente, con un plazo máximo de 2 días."
+              "front": "¿Qué plazo aplica si un incidente grave resulta en el fallecimiento de una persona (Art. 73.4)?",
+              "back": "Debe notificarse inmediatamente, con un plazo máximo de 10 días desde que el proveedor tenga conocimiento del incidente."
           },
           {
-              "front": "¿Cuál es el plazo de notificación si el incidente vulnera derechos fundamentales?",
-              "back": "Debe notificarse inmediatamente, con un plazo máximo de 10 días."
+              "front": "¿Cuál es el plazo de notificación si el incidente vulnera derechos fundamentales (Art. 73.2)?",
+              "back": "Se aplica el plazo general de máximo 15 días. El plazo de 2 días es exclusivamente para infraestructuras críticas o infracción generalizada (Art. 73.3)."
           },
           {
               "front": "¿A quién le recae principalmente la obligación legal de notificar el incidente a la AVM?",
@@ -3037,24 +3029,24 @@ export const guides: Guide[] = [
               "correctAnswer": 2
           },
           {
-              "question": "En el supuesto de que un incidente grave resulte en el fallecimiento de un usuario, ¿cuál es el plazo máximo para realizar la notificación?",
+              "question": "En el supuesto de que un incidente grave resulte en el fallecimiento de una persona (Art. 73.4), ¿cuál es el plazo máximo para realizar la notificación?",
               "options": [
                   "24 horas",
                   "2 días",
                   "10 días",
                   "15 días"
               ],
-              "correctAnswer": 1
+              "correctAnswer": 2
           },
           {
-              "question": "Si se produce una vulneración de derechos fundamentales a causa del sistema de IA, el plazo de notificación a la AVM es de un máximo de:",
+              "question": "Si se produce una vulneración de derechos fundamentales a causa del sistema de IA, el plazo de notificación a la AVM según el Artículo 73.2 es de un máximo de:",
               "options": [
                   "2 días",
                   "5 días",
                   "10 días",
                   "15 días"
               ],
-              "correctAnswer": 2
+              "correctAnswer": 3
           },
           {
               "question": "¿Qué debe hacer el responsable del despliegue (usuario profesional) si detecta un incidente grave en su operativa?",

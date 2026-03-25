@@ -44,7 +44,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className={`${outfit.variable} antialiased min-h-screen`}>
+      <body className={`${outfit.variable} antialiased min-h-screen`} suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
             <div className="fixed inset-0 pointer-events-none -z-10 transition-opacity duration-500" />
