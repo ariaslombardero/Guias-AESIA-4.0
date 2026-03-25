@@ -30,6 +30,7 @@ export interface Guide {
   contentIndex?: ContentSection[];
   pdfUrl?: string; // URL to the official PDF guide
   glossary?: GlossaryTerm[];
+  glossaryType?: 'official' | 'didactic'; // 'official' = verbatim PDF annex; 'didactic' = AI-assisted
 }
 
 export const guides: Guide[] = [
@@ -47,15 +48,11 @@ export const guides: Guide[] = [
         "content": "El Reglamento se basa en la estrategia europea de dos pilares: Excelencia (fomento de inversión e innovación) y Confianza (garantía de seguridad y derechos fundamentales). Busca crear un mercado único de IA seguro y confiable.\n\n### Exclusiones del ámbito de aplicación\nNo se aplica a sistemas utilizados exclusivamente para:\n1.  Fines militares, de defensa o seguridad nacional.\n2.  Investigación y desarrollo (I+D) científica antes de su comercialización.\n3.  Software de código abierto (Open Source), salvo que sean sistemas de alto riesgo, prohibidos, o tengan obligaciones de transparencia.\n4.  Uso personal por personas físicas en actividades no profesionales.\n\n### Niveles de riesgo\nEl Reglamento sigue un enfoque basado en el riesgo:\n\n*   🔴 Riesgo Inaceptable (Prohibidos): Sistemas que vulneran derechos fundamentales. Ejemplos:\n    *   Manipulación del comportamiento cognitivo.\n    *   Puntuación social (*social scoring*).\n    *   Categorización biométrica sensible.\n    *   Identificación biométrica remota en tiempo real en espacios públicos (salvo excepciones policiales estrictas).\n*   🟠 Alto Riesgo: Permitidos pero sujetos a estrictos requisitos antes de entrar al mercado. Incluye:\n    *   Componentes de seguridad en productos regulados (juguetes, ascensores, dispositivos médicos).\n    *   Sistemas en áreas sensibles: Biometría, infraestructuras críticas, educación, empleo, servicios esenciales, control fronterizo y justicia.\n*   🟡 Riesgo Limitado (Transparencia): Sistemas con riesgo de manipulación o engaño. Obligación principal: Informar al usuario.\n    *   *Chatbots* (saber que hablas con una IA).\n    *   *Deepfakes* (etiquetar contenido sintético).\n    *   Reconocimiento de emociones.\n*   🟢 Riesgo Mínimo: La inmensa mayoría de sistemas (filtros de spam, videojuegos). Se permite su uso libre, fomentando códigos de conducta voluntarios.\n\n### Actores clave\n*   Proveedor (*Provider*): Quien desarrolla un sistema de IA o lo pone en el mercado bajo su nombre o marca.\n*   Responsable del despliegue (*Deployer*): Quien utiliza el sistema bajo su propia autoridad en el ejercicio de una actividad profesional."
       },
       {
-        "title": "2.1 Niveles de riesgo",
-        "content": "El Reglamento clasifica los sistemas en 4 niveles de riesgo:\n\n🔴 **Prohibidos**: Manipulación cognitiva, social scoring, biometría sensible, vigilancia masiva.\n\n🟠 **Alto riesgo**: Sistemas en sectores críticos (empleo, educación, justicia, salud). Requieren gestión de riesgos, datos de calidad, documentación técnica, vigilancia humana y evaluación de conformidad.\n\n🟡 **Transparencia**: Chatbots y deepfakes deben informar al usuario.\n\n🟢 **Mínimo**: Sin obligaciones específicas (spam filters, videojuegos)."
-      },
-      {
         "title": "3. Principales obligaciones",
         "content": "Las obligaciones varían según el rol y el nivel de riesgo del sistema.\n\n### Obligaciones generales\n*   Alfabetización en IA: Proveedores y responsables del despliegue deben asegurar que su personal tenga la formación necesaria para operar y supervisar los sistemas de IA correctamente.\n\n### Obligaciones de transparencia (art. 50)\nAplicables a sistemas de riesgo limitado (chatbots, deepfakes, etc.):\n1.  Interacción: Informar al usuario de que está interactuando con una IA.\n2.  Contenido sintético: Marcar en formato legible digitalmente el contenido de audio, imagen o vídeo generado o manipulado artificialmente (deepfakes).\n3.  Reconocimiento de emociones/biométrico: Informar a las personas expuestas al sistema.\n\n### Obligaciones para sistemas de alto riesgo (proveedores)\nPara comercializar un sistema de alto riesgo, el proveedor debe cumplir con un ciclo de vida estricto:\n\n1.  Sistema de Gestión de Riesgos (Art. 9): Identificar, evaluar y mitigar riesgos durante toda la vida del sistema.\n2.  Gobernanza de datos (Art. 10): Usar datos de entrenamiento, validación y prueba de calidad, pertinentes y libres de sesgos.\n3.  Documentación técnica (Art. 11): Elaborar documentación detallada que demuestre la conformidad con el reglamento.\n4.  Registro automático (logs) (Art. 12): Capacidad de registrar eventos para trazabilidad y detección de errores.\n5.  Transparencia e información (Art. 13): Instrucciones de uso claras y diseño interpretable para el usuario.\n6.  Vigilancia humana (Art. 14): Herramientas para que una persona física pueda supervisar e intervenir en el sistema.\n7.  Precisión, solidez y ciberseguridad (Art. 15): Resistencia a errores, fallos y ataques malintencionados.\n8.  Evaluación de conformidad (Art. 43): Verificar el cumplimiento antes de la puesta en mercado (puede requerir un organismo notificado).\n\n### Calendario de aplicación\n*   6 meses: Prohibiciones (Riesgo Inaceptable).\n*   12 meses: IA de Uso General (GPAI) y Autoridades de Notificación.\n*   24 meses: Aplicación general (Sistemas de Alto Riesgo del Anexo III).\n*   36 meses: Sistemas de Alto Riesgo integrados en productos (Anexo I)."
       },
       {
-        "title": "4. Anexo i. evaluación de la conformidad y autoridades",
+        "title": "4. ANEXO I. Evaluación de la conformidad y autoridades de vigilancia del mercado",
         "content": "Este anexo clarifica quién supervisa y cómo se evalúan los sistemas de alto riesgo.\n\n### Tipos de sistemas y evaluación\n\n| Tipo de Sistema | Ejemplos | Autoridad de Vigilancia (España) | Evaluación de Conformidad |\n| :--- | :--- | :--- | :--- |\n| **Anexo I (Productos)** | Juguetes, ascensores, productos sanitarios, maquinaria agrícola. | **Sectorial** (ej. AEMPS, Ministerio de Industria). | **Integrada** en la legislación del producto (Marcado CE actual). |\n| **Anexo III (Finalidad)** | Educación, Empleo, Justicia, Servicios Públicos. | **AESIA** (generalmente), Banco de España, AEPD, etc. | Principalmente **Control Interno** (Autoevaluación). |\n| **Biometría (Anexo III)** | Identificación biométrica remota. | **AEPD / AESIA** | Requiere **Organismo Notificado** (tercero independiente). |\n\n> **AESIA:** La Agencia Española de Supervisión de la Inteligencia Artificial actuará como punto de contacto único y autoridad para sistemas de alto riesgo que no tengan una autoridad sectorial específica previa."
       }
     ],
@@ -281,10 +278,6 @@ export const guides: Guide[] = [
         "definition": "Persona física o jurídica establecida en la UE que ha sido designada por escrito por un proveedor de fuera de la UE para cumplir en su nombre las obligaciones establecidas en el Reglamento."
       },
       {
-        "term": "Robustez",
-        "definition": "Capacidad de un sistema de IA para mantener su nivel de rendimiento en condiciones difíciles, resistiendo errores, fallos o ataques adversarios sin alterar su funcionamiento seguro."
-      },
-      {
         "term": "Sesgo algorítmico",
         "definition": "Desviación sistemática y repetible en los resultados de un sistema de IA que crea resultados injustos, como privilegiar a un grupo de usuarios sobre otros de manera arbitraria."
       },
@@ -293,7 +286,8 @@ export const guides: Guide[] = [
         "definition": "Definición legal: Sistema basado en máquinas diseñado para funcionar con autonomía y que puede, para objetivos explícitos o implícitos, generar salidas como predicciones, recomendaciones o decisiones que influyan en entornos físicos o virtuales."
       }
     ],
-    "pdfUrl": "https://aesia.digital.gob.es/storage/media/01-guia-introductoria-al-reglamento-de-ia-1770802981.pdf"
+    "pdfUrl": "https://aesia.digital.gob.es/storage/media/01-guia-introductoria-al-reglamento-de-ia-1770802981.pdf",
+    "glossaryType": "didactic"
   },
   {
       "id": "02",
@@ -474,6 +468,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/02-guia-practica-y-ejemplos-para-entender-el-reglamento-de-ia.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Sistema de Inteligencia Artificial (IA)",
@@ -712,6 +707,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/03-guia-evaluacion-de-conformidad.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Evaluación de la conformidad",
@@ -930,6 +926,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/04-guia-del-sistema-de-gestion-de-la-calidad.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Sistema de Gestión de la Calidad (SGC)",
@@ -1148,46 +1145,43 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/05-guia-de-gestion-de-riesgos.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
               "term": "Amenaza",
-              "definition": "Peligros a los que está expuesto el sistema de IA que pueden terminar materializándose en un riesgo causando daños, provenientes de ataques externos, sucesos inesperados o incumplimientos de políticas ."
+              "definition": "Peligros a los que está expuesto el sistema que pueden terminar materializándose en un riesgo. Las amenazas de un sistema provienen principalmente de ataques externos (como un ciberataque), de no cumplir las políticas de seguridad (conectar dispositivos no autorizados a la red o utilizar contraseñas débiles) y de sucesos inesperados (como incendios o robos físicos, por ejemplo)."
           },
           {
               "term": "Vulnerabilidad",
-              "definition": "Debilidad propia de un sistema que permite ser atacado y recibir un daño, frecuentemente producida por una baja protección contra ataques externos ."
+              "definition": "Debilidad propia de un sistema que permite ser atacado y recibir un daño. Las vulnerabilidades se producen de forma habitual por una baja protección contra ataques externos."
           },
           {
               "term": "Riesgo",
-              "definition": "Posibilidad de que un sistema sufra un incidente y que una amenaza se materialice causando daños, aprovechando una vulnerabilidad existente ."
+              "definition": "Posibilidad de que un sistema sufra un incidente y que una amenaza se materialice causando daños. El riesgo es, por lo tanto, la probabilidad de que la amenaza se materialice aprovechando una vulnerabilidad existente."
           },
           {
               "term": "Medidas de control",
-              "definition": "En el contexto de la gestión de riesgos, son las acciones técnicas u organizativas que deben tomarse para proteger el sistema de las amenazas, reduciendo la probabilidad del riesgo o su impacto ."
+              "definition": "En el contexto de la gestión de riesgos, son las medidas que deben tomarse para proteger el sistema de las amenazas, haciéndolo menos vulnerable y reduciendo la probabilidad de que el riesgo se materialice o en su lugar reduciendo el impacto que éste tendría en mi sistema."
           },
           {
               "term": "Apetito al riesgo",
-              "definition": "Es el volumen de riesgo, cuantificable a través del impacto y la probabilidad, que una organización está dispuesta a aceptar en la búsqueda de lograr su misión ."
+              "definition": "Es el volumen de riesgo que nuestra organización está dispuesta a aceptar en la búsqueda de lograr su misión."
           },
           {
               "term": "Riesgo inherente",
-              "definition": "Es el riesgo intrínseco de cada actividad o sistema, evaluado sin tener en cuenta las medidas de control y mitigación que puedan implantarse ."
+              "definition": "Es el riesgo intrínseco de cada actividad, sin tener en cuenta las medidas de control que puedan implantarse."
           },
           {
               "term": "Riesgo residual",
-              "definition": "Es aquel riesgo que subsiste y permanece en el sistema después de haber implementado de manera efectiva los controles y medidas de tratamiento ."
-          },
-          {
-              "term": "HRAIS (Sistemas de IA de alto riesgo)",
-              "definition": "Sistemas basados en Inteligencia Artificial regulados por la normativa que tienen un impacto significativo potencial en la vida de las personas, la salud, la seguridad y sus derechos fundamentales ."
+              "definition": "Es aquel riesgo que subsiste, después de haber implementado controles."
           },
           {
               "term": "Ataque de fuzzing",
-              "definition": "Técnica de testeo automatizado utilizada como vector de ataque mediante la cual se introducen datos inválidos, aleatorios o inesperados a un sistema informático ."
+              "definition": "Técnica de testeo automatizado mediante la que se introducen datos inválidos, aleatorios o inesperados a un sistema informático."
           },
           {
-              "term": "Identificación de riesgos",
-              "definition": "Proceso iterativo de descubrimiento, reconocimiento y documentación de los diferentes peligros y amenazas que pueden afectar al sistema de IA y a las personas ."
+              "term": "HRAIS",
+              "definition": "Los sistemas de alto riesgo basados en Inteligencia Artificial son aquellos con un impacto significativo en la vida de las personas y en sus derechos fundamentales. Estos sistemas se utilizan en áreas críticas como la biometría, la educación, el empleo, la aplicación de la ley, la gestión de infraestructuras críticas, y otros sectores donde su mal uso podría causar daños considerables. El reglamento en el artículo 6 y el Anexo III establecen los requisitos para el desarrollo, implementación y supervisión para garantizar su seguridad y fiabilidad."
           }
       ]
   },
@@ -1366,46 +1360,27 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/06-guia-vigilancia-humana.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
-              "term": "Vigilancia humana",
-              "definition": "Medidas y capacidades integradas en los sistemas de IA para que puedan ser supervisados por personas, previniendo riesgos para la salud, la seguridad y los derechos fundamentales."
+              "term": "Ciclo de vida",
+              "definition": "El ciclo de vida de un sistema de IA son las fases por las que pasa dicho sistema desde su concepción hasta que es retirado. Los estándares [ISO/IEC 22989] e [ISO/IEC 5338] definen en profundidad cuáles son, desde el punto de vista normativo, las fases del ciclo de vida de un sistema basado en IA. Por ejemplo, en el [ISO/IEC 22989:2022, cláusula 6.1] se definen fundamentalmente los siguientes estados: Concepción. Diseño y desarrollo. Verificación y validación del producto o servicio. Despliegue. Funcionamiento y supervisión. Reevaluación. Retirada o desmantelamiento. Fuente: ISO.org."
           },
           {
-              "term": "Sesgo de automatización",
-              "definition": "Tendencia de los usuarios humanos a confiar ciegamente en las salidas de un sistema automatizado, perdiendo la capacidad de cuestionar o detectar errores en las decisiones de la IA."
+              "term": "Árbol de decisión",
+              "definition": "Modelo para el que la inferencia se codifica como caminos desde la raíz hasta un nodo hoja. NOTA 1 a la entrada: Las decisiones se toman en los nodos de una ruta y cada hoja representa la decisión. Fuente: JRC. Glossary of human-centric artificial intelligence."
           },
           {
-              "term": "HRAIS",
-              "definition": "Siglas en inglés de High-Risk Artificial Intelligence System (Sistema de Inteligencia Artificial de Alto Riesgo), sujetos a estrictos controles normativos."
+              "term": "Equidad",
+              "definition": "La imparcialidad se refiere a una variedad de ideas conocidas como equidad, imparcialidad, igualitarismo, no discriminación y justicia. La Equidad encarna un ideal de igualdad de trato entre individuos o entre grupos de individuos. Esto es lo que generalmente se busca desde una perspectiva procesal, es decir, la capacidad de buscar y obtener reparación cuando se violan los derechos y libertades individuales. Fuente: JRC. Glossary of human-centric artificial intelligence."
           },
           {
-              "term": "Human in the Loop (HITL)",
-              "definition": "Nivel de autonomía donde el sistema de IA proporciona información o recomendaciones, pero el ser humano siempre debe intervenir para tomar y ejecutar la decisión final."
+              "term": "GDPR",
+              "definition": "Reglamento general de protección de datos (RGPD), es la Directiva europea sobre protección de datos en el ámbito penal y otras normas relativas a la protección de datos personales. Fuente: Comisión Europea."
           },
           {
-              "term": "Human on the Loop (HOTL)",
-              "definition": "Nivel de autonomía donde la IA realiza tareas y toma decisiones por sí misma, mientras que un supervisor humano observa en tiempo real y puede intervenir o abortar el proceso."
-          },
-          {
-              "term": "Human in Command (HIC)",
-              "definition": "Nivel superior de autonomía y gobernanza, donde las personas determinan la finalidad, dirigen el impacto del sistema y tienen el poder de decidir cuándo y cómo se utiliza la IA."
-          },
-          {
-              "term": "Error forzado",
-              "definition": "Medida de concienciación consistente en provocar fallos deliberados y controlados en el sistema durante simulaciones para comprobar que el supervisor humano mantiene un criterio analítico."
-          },
-          {
-              "term": "Interfaz Humano-Máquina (HMI)",
-              "definition": "Punto de interacción entre el usuario y el sistema de IA, que debe estar diseñado con un lenguaje y visualización adecuados para permitir una supervisión transparente y eficaz."
-          },
-          {
-              "term": "Identificación biométrica remota",
-              "definition": "Sistemas de IA de alto riesgo que identifican a personas a distancia mediante biometría, los cuales requieren por ley verificación por separado de al menos dos personas físicas."
-          },
-          {
-              "term": "Modelo de gobernanza",
-              "definition": "Marco organizativo que incluye la estructura, procedimientos, roles, responsabilidades y capacitación necesarios para gestionar adecuadamente los riesgos y la supervisión de un sistema de IA."
+              "term": "MLOps",
+              "definition": "Soportan la tarea de desplegar modelos de IA en producción desde los entornos previos (desarrollo, integración, preproducción, etc.) mediante procesos y flujos de trabajo automatizados. Fuente: Arxiv.org (Cornell University)."
           }
       ]
   },
@@ -1617,7 +1592,8 @@ export const guides: Guide[] = [
               "definition": "Proceso por el que se eliminan o modifican los datos de forma que la persona a la que se refieren no pueda ser identificada directa ni indirectamente. Tiene preferencia sobre la seudonimización cuando la finalidad lo permite."
           }
       ],
-      "pdfUrl": "https://aesia.digital.gob.es/storage/media/07-guia-de-datos-y-gobernanza-de-datos.pdf"
+      "pdfUrl": "https://aesia.digital.gob.es/storage/media/07-guia-de-datos-y-gobernanza-de-datos.pdf",
+  "glossaryType": "didactic"
   },
   {
       "id": "08",
@@ -1794,46 +1770,27 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/08-guia-transparencia.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
-              "term": "Transparencia",
-              "definition": "Capacidad de un sistema de IA para proporcionar información estructurada sobre su funcionamiento, características y limitaciones, de manera que los usuarios lo comprendan y utilicen adecuadamente."
-          },
-          {
-              "term": "Contrafactualidad",
-              "definition": "Capacidad del sistema de IA para explicar bajo qué valores, variables o circunstancias diferentes en los datos de entrada se habría tomado una decisión o generado una predicción distinta."
-          },
-          {
-              "term": "Caja negra",
-              "definition": "Modelo de inteligencia artificial (como ciertas redes neuronales profundas) cuyo funcionamiento o razonamiento interno es difícil o imposible de interpretar de forma directa por los humanos."
+              "term": "Ciclo de vida",
+              "definition": "El ciclo de vida de un sistema de IA son las fases por las que pasa dicho sistema desde su concepción hasta que es retirado. Los estándares [ISO/IEC 22989] e [ISO/IEC 5338] definen en profundidad cuáles son, desde el punto de vista normativo, las fases del ciclo de vida de un sistema basado en IA. Fuente: ISO.org."
           },
           {
               "term": "Árbol de decisión",
-              "definition": "Modelo de aprendizaje automático interpretable y estructurado donde la lógica de inferencia se codifica de manera transparente como caminos desde un nodo raíz hasta un nodo hoja que determina la decisión final."
+              "definition": "Modelo para el que la inferencia se codifica como caminos desde la raíz hasta un nodo hoja. Las decisiones se toman en los nodos de una ruta y cada hoja representa la decisión. Fuente: JRC. Glossary of human-centric artificial intelligence."
+          },
+          {
+              "term": "Equidad",
+              "definition": "La imparcialidad se refiere a una variedad de ideas conocidas como equidad, imparcialidad, igualitarismo, no discriminación y justicia. La Equidad encarna un ideal de igualdad de trato entre individuos o entre grupos de individuos. Fuente: JRC. Glossary of human-centric artificial intelligence."
+          },
+          {
+              "term": "GDPR",
+              "definition": "Reglamento general de protección de datos (RGPD), es la Directiva europea sobre protección de datos en el ámbito penal y otras normas relativas a la protección de datos personales. Fuente: Comisión Europea."
           },
           {
               "term": "MLOps",
-              "definition": "Conjunto de prácticas, procesos y herramientas que soportan la integración continua, validación y despliegue de modelos de IA en entornos de producción mediante flujos de trabajo automatizados."
-          },
-          {
-              "term": "Análisis Exploratorio de Datos (EDA)",
-              "definition": "Fase analítica y estadística inicial sobre las fuentes de datos para conocer su esencia, metainformación, representatividad y detectar valores atípicos que puedan sesgar el sistema de IA."
-          },
-          {
-              "term": "Equidad (Fairness)",
-              "definition": "Principio que persigue un trato igualitario, imparcial y no discriminatorio, garantizando que el sistema de IA no incurra en prejuicios indebidos hacia individuos o colectivos concretos."
-          },
-          {
-              "term": "Instrucciones de uso",
-              "definition": "Documentación en formato digital o físico que acompaña preceptivamente al sistema de IA de alto riesgo, brindando información concisa, pertinente y comprensible para operar el sistema correctamente."
-          },
-          {
-              "term": "Responsable del despliegue",
-              "definition": "Toda persona física o jurídica, autoridad pública u organismo que utilice un sistema de IA bajo su autoridad en un contexto profesional, distinguiéndose de los desarrolladores y de los usuarios finales afectados."
-          },
-          {
-              "term": "Ciclo de vida",
-              "definition": "Conjunto de fases sucesivas por las que atraviesa un sistema de IA desde su concepción, diseño, entrenamiento y despliegue, hasta su mantenimiento, monitorización y eventual desmantelamiento."
+              "definition": "Soportan la tarea de desplegar modelos de IA en producción desde los entornos previos (desarrollo, integración, preproducción, etc.) mediante procesos y flujos de trabajo automatizados. Fuente: Arxiv.org (Cornell University)."
           }
       ]
   },
@@ -2016,46 +1973,127 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/09-guia-de-precision.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
-              "term": "Precisión",
-              "definition": "Medida cuantitativa que refleja el grado en que el desempeño y las salidas de un sistema de IA se ajustan a su finalidad prevista a lo largo de su ciclo de vida."
+              "term": "Absolute Between-ROC Área (ABROCA)",
+              "definition": "ABROCA mide el valor absoluto del área entre la curva ROC del grupo de referencia y las curvas ROC de uno o más grupos de comparación. De esta forma, cuantifica la divergencia entre las curvas ROC de distintos grupos a través de todos los umbrales posibles, agregando esta divergencia sin importar qué subgrupo tiene mejor rendimiento. Esto permite evaluar imparcialidad en el rendimiento del modelo para diferentes subgrupos."
           },
           {
-              "term": "Sobreaprendizaje (Overfitting)",
-              "definition": "Fenómeno del aprendizaje automático que ocurre cuando un modelo se ajusta en exceso al conjunto de datos de entrenamiento, perdiendo su capacidad para generalizar correctamente sobre datos nuevos o no vistos."
+              "term": "Accuracy",
+              "definition": "La accuracy, o exactitud, en el contexto de modelos de clasificación es la proporción de predicciones correctas sobre el total de predicciones realizadas. Es una medida de rendimiento que indica qué tan bien el modelo clasifica correctamente las instancias en el conjunto de datos."
           },
           {
-              "term": "Baseline model (Modelo base)",
-              "definition": "Modelo computacional sencillo y de baja complejidad que sirve como referencia inicial estandarizada para comparar y evaluar la mejora de precisión aportada por el sistema de IA más complejo."
+              "term": "Accuracy equity",
+              "definition": "Un sistema de IA muestra equidad en la precisión (accuracy equity) si puede discriminar de igual manera entre la clasificación posible de su espacio de salida para grupos diferentes."
           },
           {
-              "term": "Matriz de Confusión",
-              "definition": "Tabla utilizada en tareas de clasificación que visualiza el desempeño del modelo comparando las predicciones realizadas contra los valores reales, desglosando verdaderos y falsos positivos/negativos."
+              "term": "Accuracy macro-media, micro-media y media-ponderada",
+              "definition": "Un macro-media calculará la métrica de forma independiente para cada clase y, a continuación, sacará la media (tratando a todas las clases por igual), mientras que una micro-media agregará las contribuciones de todas las clases para calcular la métrica media. Para calcular una media ponderada, cada número del conjunto de datos se multiplica por un peso predeterminado antes de realizar el cálculo final."
           },
           {
-              "term": "Tarjeta del Modelo (Model Card)",
-              "definition": "Documentación técnica resumida y estandarizada de un sistema de IA que detalla sus características operativas, las métricas de precisión elegidas, umbrales, incertidumbres y recomendaciones éticas de uso."
+              "term": "Base Line model",
+              "definition": "Son modelos sencillos que funcionan como referencia para el sistema de IA. Su principal función es contextualizar el resultado de los entrenamientos del modelo de IA. Generalmente estos modelos carecen de complejidad y tienen poco poder predictivo."
           },
           {
-              "term": "Función objetivo",
-              "definition": "Ecuación matemática que el algoritmo de entrenamiento de IA busca minimizar (o maximizar) durante la fase de aprendizaje para ajustar de forma óptima los parámetros y lograr la precisión deseada."
+              "term": "BIASeD",
+              "definition": "Categorización o taxonomía de sesgos cognitivos conocidos, desde la perspectiva de los sistemas de IA. Este catálogo y el trabajo de investigación realizado pretende alinear los sesgos en IA con los propios sesgos del género humano."
           },
           {
-              "term": "Benchmark",
-              "definition": "Prueba de evaluación de rendimiento estandarizada en la que se utiliza un conjunto de datos público reconocido para medir y comparar la precisión de un modelo frente al estado del arte."
+              "term": "BLEU",
+              "definition": "BLEU es una métrica utilizada en traducción automática para evaluar la calidad de una traducción generada en comparación con una traducción de referencia. Su cálculo se basa en la coincidencia de n-gramas entre el texto traducido y el texto de referencia."
           },
           {
-              "term": "Significancia Estadística",
-              "definition": "Evaluación analítica (mediante pruebas como Wilcoxon, ANOVA o T-Test) orientada a justificar que las diferencias de precisión obtenidas entre modelos no se deben al azar, sino a mejoras sistémicas reales."
+              "term": "Central Limit Theorem",
+              "definition": "El teorema del límite central (CLT) afirma que la distribución de una variable muestral se aproxima a una distribución normal (curva de campana) a medida que aumenta el tamaño de la muestra, suponiendo que todas las muestras son idénticas en tamaño e independientemente de la forma real de la distribución de la población."
           },
           {
-              "term": "Curva ROC",
-              "definition": "Representación gráfica utilizada en evaluación de precisión para modelos de clasificación binaria, que ilustra el rendimiento del modelo en todos los umbrales posibles (tasa de verdaderos positivos vs. falsos positivos)."
+              "term": "Cross-entropía binaria",
+              "definition": "Función objetivo que mide el rendimiento de un modelo de clasificación cuya salida es un valor de probabilidad entre 0 y 1. La pérdida de entropía cruzada aumenta a medida que la probabilidad predicha diverge de la etiqueta real."
           },
           {
-              "term": "Discounted Cumulative Gain (DCG)",
-              "definition": "Métrica de precisión utilizada comúnmente en tareas de recomendación y ranking; valora la relevancia de las salidas y penaliza logarítmicamente aquellos aciertos que aparecen en rangos inferiores de la lista."
+              "term": "Curva de elevación (lift curve)",
+              "definition": "Esta curva muestra la proporción de ganancias en el total de positivos con respecto a la proporción de registros del conjunto de prueba. Permite analizar qué proporción del conjunto de pruebas es necesaria para obtener un determinado porcentaje de ganancia en el total de positivos."
+          },
+          {
+              "term": "DCG (Discounted Cumulative Gain)",
+              "definition": "Se utiliza para sistemas de IA donde se establece un ranking u ordenación. La ganancia mide la utilidad de una muestra, mientras que el descuento penaliza los documentos recuperados con un rango inferior."
+          },
+          {
+              "term": "F-beta",
+              "definition": "La puntuación F-beta es una métrica utilizada en el campo de la inteligencia artificial para evaluar el rendimiento de un modelo de aprendizaje automático en un problema de clasificación, teniendo en cuenta tanto la precisión como el recall."
+          },
+          {
+              "term": "F1 con media ponderada",
+              "definition": "El promedio ponderado de la puntuación F1 es una métrica que se utiliza cuando las clases están desequilibradas y se desea tener en cuenta la importancia relativa de cada clase en la evaluación global del modelo."
+          },
+          {
+              "term": "Prueba exacta de Fisher",
+              "definition": "Prueba estadística utilizada para determinar si existe una asociación significativa entre dos variables categóricas en una tabla de contingencia 2x2. Es especialmente útil cuando los recuentos de celdas son bajos."
+          },
+          {
+              "term": "Focal loss",
+              "definition": "Función de pérdida focal que aborda el desequilibrio de clase durante el entrenamiento en tareas como la detección de objetos. Aplica un término modulador a la pérdida de entropía cruzada para enfocar el aprendizaje en ejemplos mal clasificados."
+          },
+          {
+              "term": "Hamming Loss",
+              "definition": "Métrica que mide la precisión de un modelo de clasificación multi-etiqueta al calcular la tasa promedio de etiquetas clasificadas incorrectamente."
+          },
+          {
+              "term": "Hinge embedding loss",
+              "definition": "Función de pérdida utilizada en algoritmos de clasificación binaria, como las máquinas de vectores de soporte (SVM). Su objetivo es maximizar el margen entre las clases y penalizar las clasificaciones incorrectas."
+          },
+          {
+              "term": "Índice de Rand",
+              "definition": "Métrica utilizada para evaluar la similitud entre dos agrupaciones. Calcula la proporción de pares de datos que están asignados de la misma manera en ambas agrupaciones."
+          },
+          {
+              "term": "Información mutua ajustada",
+              "definition": "La información mutua ajustada es una métrica utilizada en el análisis de agrupamientos para medir la similitud entre dos conjuntos de etiquetas. Ajusta la información mutua para corregir por azar."
+          },
+          {
+              "term": "Matriz de confusión",
+              "definition": "Tabla que muestra las predicciones de un modelo de clasificación en comparación con los valores reales. Tiene cuatro celdas: verdaderos positivos, falsos positivos, falsos negativos y verdaderos negativos."
+          },
+          {
+              "term": "METEOR",
+              "definition": "Metric for Evaluation of Translation with Explicit ORdering, es una métrica de evaluación de traducción que tiene en cuenta tanto la fluidez del texto como la correspondencia semántica entre la traducción y la referencia."
+          },
+          {
+              "term": "Métrica de completitud",
+              "definition": "También conocida como recall, mide la capacidad de un modelo para identificar todos los elementos positivos en un conjunto de datos. Se calcula como la proporción de verdaderos positivos sobre la suma de verdaderos positivos y falsos negativos."
+          },
+          {
+              "term": "NIST LRE",
+              "definition": "NIST Language Recognition Evaluation. El objetivo de esta métrica es establecer una medida de base para el rendimiento y la capacidad de reconocimiento de lenguaje hablado a través del teléfono."
+          },
+          {
+              "term": "Non saturating GAN loss",
+              "definition": "Se utiliza en GANs para entrenar el generador de imágenes y superar problemas de saturación y desvanecimiento del gradiente. Proporciona una alternativa efectiva a la pérdida clásica de GAN."
+          },
+          {
+              "term": "Precisión-Recall (curva) PRC y Área debajo PRC (AUPRC)",
+              "definition": "La precisión-recall (PRC) es una métrica que evalúa el rendimiento de un modelo de clasificación en términos de precisión y recall a medida que se varía el umbral de clasificación. El área debajo de la curva (AUPRC) resume el rendimiento general del modelo."
+          },
+          {
+              "term": "Predictive parity",
+              "definition": "Métrica de equidad que comprueba si, para un clasificador determinado, los índices de precisión son equivalentes para los subgrupos considerados."
+          },
+          {
+              "term": "Reweighting",
+              "definition": "Técnica que minimiza el sesgo ajustando los pesos o las probabilidades de las observaciones en un conjunto de datos para abordar desequilibrios o mejorar la representatividad de ciertas clases o instancias."
+          },
+          {
+              "term": "RMSE",
+              "definition": "Métrica que cuantifica el error promedio entre las predicciones de un modelo de regresión y los valores reales del conjunto de datos. Es utilizado para evaluar y comparar la precisión de diferentes modelos."
+          },
+          {
+              "term": "Word Accuracy",
+              "definition": "Word Accuracy mide la fracción de palabras que un sistema de reconocimiento o procesamiento de texto clasifica o identifica correctamente, en comparación con una referencia."
+          },
+          {
+              "term": "Word Error Rate",
+              "definition": "Medida que cuantifica la precisión del reconocimiento automático de voz al comparar la transcripción generada por el sistema con una transcripción de referencia."
           }
       ]
   },
@@ -2234,46 +2272,103 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/10-guia-solidez.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
-              "term": "Solidez (Robustness)",
-              "definition": "Capacidad de un sistema de IA para mantener un rendimiento confiable, preciso y seguro ante errores, fallos operativos o alteraciones de su entorno, minimizando riesgos para los derechos y la salud de las personas."
+              "term": "Abstract interpretation",
+              "definition": "Técnica que simplifica el análisis de programas al crear representaciones abstractas que capturan propiedades esenciales. Ayuda a comprender y razonar sobre el comportamiento de los programas sin necesidad de ejecutarlos realmente."
           },
           {
-              "term": "Fiabilidad (Reliability)",
-              "definition": "Propiedad del sistema que describe la consistencia y coherencia general entre los valores estimados inicialmente por el modelo y las estimaciones subsecuentes a lo largo del tiempo."
+              "term": "Anderson-Darling",
+              "definition": "Prueba estadística utilizada para determinar si una muestra de datos proviene de una distribución de probabilidad específica. Evalúa si la distribución empírica de los datos se ajusta de manera adecuada a la distribución teórica."
           },
           {
-              "term": "Estabilidad",
-              "definition": "Capacidad del sistema de IA para mantenerse invariable o insensible frente a alteraciones irrelevantes y ruido en las características de entrada."
+              "term": "Aprendizaje privilegiado destilado",
+              "definition": "Técnica de aprendizaje automático que utiliza información adicional o conocimiento privilegiado disponible durante la etapa de entrenamiento para mejorar el rendimiento del modelo final."
           },
           {
-              "term": "Fallo Seguro (Fail-safe)",
-              "definition": "Mecanismo de diseño que permite al sistema interrumpir su funcionamiento o transferir el control a un método de respaldo seguro cuando opera fuera de los márgenes de solidez y certidumbre establecidos."
+              "term": "AUROC",
+              "definition": "El AUROC es una métrica que resume la calidad de la curva ROC y proporciona una medida cuantitativa del rendimiento del modelo. Cuanto mayor sea el valor del AUROC, mejor será el rendimiento del modelo."
           },
           {
-              "term": "Olvido Catastrófico (Catastrophic Forgetting)",
-              "definition": "Degradación crítica en un modelo de aprendizaje continuo donde pierde o corrompe de manera abrupta la capacidad para realizar las tareas en las que fue entrenado previamente al incorporar nueva información."
+              "term": "Autoencoders variacionales",
+              "definition": "Modelos de aprendizaje automático que generan representaciones latentes siguiendo una distribución específica. Permiten reconstruir los datos originales y también generar nuevos datos similares a los originales."
           },
           {
-              "term": "Data Drift (Deriva de Datos)",
-              "definition": "Situación que ocurre en sistemas en producción cuando la distribución estadística de los datos del mundo real experimenta cambios significativos en comparación con los datos originales de entrenamiento."
+              "term": "Bounded model checking",
+              "definition": "Técnica de verificación formal utilizada para probar propiedades de sistemas y programas. En este enfoque, se explora el espacio de estados del sistema hasta una profundidad limitada o acotada."
           },
           {
-              "term": "Concept Drift (Deriva de Concepto)",
-              "definition": "Desviación del modelo producida cuando la relación subyacente entre las variables de entrada y el objetivo que se intenta predecir cambia con el paso del tiempo."
+              "term": "Bounding boxes",
+              "definition": "Cajas delimitadoras. Son rectángulos utilizados para definir la posición y la extensión de un objeto de interés en una imagen. Se utilizan en tareas de detección y localización de objetos."
           },
           {
-              "term": "Domain Adaptation (Adaptación de Dominio)",
-              "definition": "Estrategia técnica para mitigar la deriva de datos mediante el ajuste de un modelo previamente entrenado en un entorno específico, para que mantenga su nivel de precisión y solidez en un nuevo entorno operativo."
+              "term": "Desplazamiento del dominio",
+              "definition": "En el aprendizaje automático, la adaptación de dominios es la capacidad de aplicar un algoritmo entrenado en uno o más dominios de origen a un dominio de destino diferente pero relacionado."
           },
           {
-              "term": "Tarjeta del Modelo (Model Card)",
-              "definition": "Ficha documental estandarizada que recopila métricas operativas de precisión, solidez, limitaciones conocidas, detalles de entrenamiento y análisis de variabilidad e incertidumbre de un modelo de IA."
+              "term": "Desviación de los datos",
+              "definition": "La deriva de los datos (data drift) se produce cuando cambian las propiedades estadísticas de la variable objetivo o cuando la distribución de los datos subyacentes se desplaza con respecto a la del modelo original."
           },
           {
-              "term": "Verificación y Validación (V&V)",
-              "definition": "Fases de control de calidad conjuntas. La verificación comprueba el cumplimiento de las reglas formales de diseño del sistema, y la validación confirma con datos reales objetivos que el sistema cumple verdaderamente su finalidad prevista."
+              "term": "Destilación del conocimiento",
+              "definition": "Técnica de aprendizaje automático en la que un modelo estudiante se entrena para replicar el comportamiento de un modelo profesor más complejo. El objetivo es transferir el conocimiento contenido en el modelo profesor al modelo alumno."
+          },
+          {
+              "term": "Epoch",
+              "definition": "En el entrenamiento de modelos de aprendizaje automático, se refiere a una iteración completa a través de todos los datos de entrenamiento. Durante una epoch, el modelo procesa y ajusta sus parámetros utilizando todos los ejemplos de entrenamiento disponibles."
+          },
+          {
+              "term": "F1 Score",
+              "definition": "La puntuación F1 es una métrica que combina tanto la precisión como el recall. Representa el equilibrio entre la capacidad del modelo para identificar correctamente los casos positivos (recall) y la capacidad de clasificar correctamente los casos positivos (precisión)."
+          },
+          {
+              "term": "False Positive Rate (FPR)",
+              "definition": "El FPR mide la proporción de ejemplos negativos (clase 0) que el modelo clasifica incorrectamente como positivos (clase 1) entre todos los ejemplos negativos reales."
+          },
+          {
+              "term": "Fast Gradient Sign Method (FGSM)",
+              "definition": "Técnica utilizada en ataques adversarios contra modelos de aprendizaje automático. Consiste en perturbar intencionadamente una entrada mediante el cálculo y la aplicación del gradiente del costo del modelo en relación con la entrada."
+          },
+          {
+              "term": "Functional robustness",
+              "definition": "Capacidad de un sistema para mantener su funcionamiento correcto y seguir brindando los resultados esperados, incluso en presencia de condiciones anormales, errores o variaciones en los datos de entrada."
+          },
+          {
+              "term": "Generative Adversarial Networks (GANs)",
+              "definition": "Tipo de arquitectura de redes neuronales utilizadas en aprendizaje profundo. Están compuestas por dos redes principales: el generador y el discriminador, que se entrenan de manera competitiva."
+          },
+          {
+              "term": "Hamming Loss",
+              "definition": "Métrica que mide la precisión de un modelo de clasificación multi-etiqueta al calcular la tasa promedio de etiquetas clasificadas incorrectamente."
+          },
+          {
+              "term": "Hot-swapping",
+              "definition": "Capacidad de reemplazar o agregar componentes de hardware o software en un sistema sin necesidad de apagarlo o reiniciarlo, permitiendo realizar actualizaciones o reparaciones en tiempo real."
+          },
+          {
+              "term": "Matthews (MCC)",
+              "definition": "Métrica que evalúa la calidad de un modelo de clasificación binaria, especialmente útil cuando se trabaja con conjuntos de datos desequilibrados. No se ve afectado por el desequilibrio de clases."
+          },
+          {
+              "term": "Model checking",
+              "definition": "Enfoque automatizado para verificar y validar sistemas informáticos, de software o hardware para garantizar que cumplan con propiedades y especificaciones deseadas."
+          },
+          {
+              "term": "ONNX",
+              "definition": "Open Neural Network Exchange. Formato de archivo abierto y estándar de representación de modelos de aprendizaje automático que permite a los desarrolladores entrenar modelos en un marco y utilizarlos en otro."
+          },
+          {
+              "term": "Safeguard based design",
+              "definition": "Enfoque de diseño que se centra en incorporar salvaguardias y mecanismos de seguridad desde el principio en los sistemas de IA, con el objetivo de garantizar que sean seguros, éticos y confiables."
+          },
+          {
+              "term": "True positive rate (TPR)",
+              "definition": "También conocida como métrica de sensibilidad, mide la proporción de ejemplos positivos (clase 1) que el modelo clasifica correctamente como positivos."
+          },
+          {
+              "term": "Zero-shot generalization",
+              "definition": "La generalización sin entrenamiento (zero-shot generalization) se refiere a la capacidad de un modelo de aprendizaje automático para aplicar su conocimiento previo y comprender tareas o dominios completamente nuevos sin haber sido entrenado específicamente en esos dominios."
           }
       ]
   },
@@ -2456,46 +2551,67 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/11-guia-ciberseguridad.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
-              "term": "Ataque Adversario",
-              "definition": "Ataque dirigido contra un sistema de inteligencia artificial, modificando las entradas o el entorno, que puede ejecutarse bajo condiciones de Caja Blanca, Caja Gris o Caja Negra dependiendo del conocimiento del atacante sobre el modelo."
+              "term": "Ataque adversario",
+              "definition": "Los ataques que se realizan contra un sistema de inteligencia artificial se consideran ataques adversarios. En relación con el nivel de conocimiento del atacante, los ataques adversarios pueden ser: Caja Blanca (acceso a la arquitectura del modelo, datos de entrenamiento, parámetros e hiperparámetros), Caja Negra (entradas y salidas), o Caja Gris (una mezcla de ambas)."
           },
           {
-              "term": "Envenenamiento de datos (Data Poisoning)",
-              "definition": "Ataque que consiste en inyectar datos falsos, maliciosos o ruidosos en los conjuntos de datos de entrenamiento para alterar el aprendizaje del modelo de IA y causar un mal funcionamiento intencionado."
+              "term": "Ataque evasión",
+              "definition": "Tipo de ataque que se produce durante la fase de inferencia con el sistema de IA en producción. El atacante no tiene acceso a los datos de entrenamiento, solo se comunica con el sistema vía interfaz (física, visual o tipo API). En general este tipo de ataques busca que una predicción del modelo sea errónea."
           },
           {
-              "term": "Evasión (Ejemplos Adversarios)",
-              "definition": "Técnica de ataque durante la fase de inferencia donde se introducen perturbaciones sutiles en los datos de entrada reales para engañar al sistema de IA, haciéndole producir un resultado o clasificación incorrecta."
+              "term": "Ataque extracción",
+              "definition": "En este tipo de ataques, el atacante tiene como objetivo crear un modelo sustituto del atacado, cuyo objetivo es replicar el funcionamiento del sistema de IA con el que se está interactuando."
           },
           {
-              "term": "Extracción de modelos",
-              "definition": "Ataque en el cual un actor malicioso realiza numerosas consultas a un sistema de IA de caja negra con el fin de replicar o clonar su comportamiento, parámetros y funcionalidad."
+              "term": "Ataque inversión",
+              "definition": "Ataque que busca inferir si en el conjunto de entrenamiento de un modelo existía una muestra concreta (Membership Inference Attacks), o tratar de obtener el conjunto de datos de entrenamiento completo o parcial a partir del modelo. Tienen como objetivo violar la privacidad y los derechos fundamentales."
           },
           {
-              "term": "SAST",
-              "definition": "Pruebas Estáticas de Seguridad de Aplicaciones (Static Application Security Testing). Metodología que analiza el código fuente, los binarios o el bytecode de una aplicación en busca de vulnerabilidades de seguridad sin ejecutar el código."
-          },
-          {
-              "term": "DAST",
-              "definition": "Pruebas Dinámicas de Seguridad de Aplicaciones (Dynamic Application Security Testing). Proceso de análisis de seguridad en el que se interactúa con una aplicación en tiempo de ejecución para detectar vulnerabilidades, simulando ataques externos."
-          },
-          {
-              "term": "RBAC",
-              "definition": "Control de Acceso Basado en Roles (Role Based Access Control). Enfoque de seguridad que restringe el acceso a los sistemas y datos basándose en los roles que los usuarios individuales tienen dentro de la organización."
+              "term": "Ataques jailbreak",
+              "definition": "Tipo de ataque que utiliza la capacidad generativa de LLMs (Large language models) u otros modelos generativos para saltarse las reglas o restricciones impuestas por el sistema de IA y sus mecanismos de seguridad."
           },
           {
               "term": "CVE",
-              "definition": "Common Vulnerabilities and Exposures. Lista pública y estandarizada de vulnerabilidades y exposiciones de seguridad de la información conocidas en componentes de software y hardware."
+              "definition": "Common Vulnerabilities and Exposures (CVE) es una lista de vulnerabilidades y exposiciones de seguridad de la información divulgadas públicamente. Accesible en https://www.cve.org/"
           },
           {
-              "term": "Destilación defensiva",
-              "definition": "Técnica de entrenamiento adversarial que añade flexibilidad al modelo entrenando un segundo modelo con las probabilidades 'blandas' generadas por el primero, haciendo que el sistema final sea menos susceptible a intentos de explotación."
+              "term": "CWE",
+              "definition": "Common Weakness Enumeration (CWE) es un sistema de categorías para las debilidades y vulnerabilidades del software. Consultable en https://cwe.mitre.org/"
           },
           {
-              "term": "Inversión de modelos",
-              "definition": "Ataque que abusa del acceso a las inferencias (salidas) de un modelo de IA para deducir o recuperar características sensibles de los datos originales que se utilizaron durante el proceso de entrenamiento."
+              "term": "Defensive Distillation",
+              "definition": "La destilación defensiva es una técnica de entrenamiento adversarial que añade flexibilidad al proceso de clasificación de un algoritmo para que el modelo sea menos susceptible de ser explotado."
+          },
+          {
+              "term": "DLP (herramientas)",
+              "definition": "Herramientas destinadas a evitar la pérdida de datos. Su relación con la ciberseguridad para inteligencia artificial viene dictada por la necesidad de control, estabilidad y seguimiento de los conjuntos de datos de entrenamiento."
+          },
+          {
+              "term": "Envenenamiento (poisoning)",
+              "definition": "El envenenamiento es un tipo de ataque, en la fase de diseño y entrenamiento, que trata de manipular el conjunto de datos de entrenamiento, con el objetivo de controlar las predicciones del sistema de inteligencia artificial."
+          },
+          {
+              "term": "Feature Squeezing",
+              "definition": "La compresión de características endurece los modelos de DNN detectando ejemplos adversarios. El preprocesamiento de las muestras de entrada puede consistir en comprimir la profundidad de color de las imágenes o en utilizar el suavizado espacial."
+          },
+          {
+              "term": "GPAI (general purpose AI)",
+              "definition": "De acuerdo con el Reglamento Europeo de Inteligencia Artificial, en el Artículo 3 Definiciones (1b): un sistema de IA destinado por el proveedor a realizar funciones de aplicación general, como el reconocimiento de imágenes y del habla, la generación de audio y vídeo, la detección de patrones, la respuesta a preguntas, la traducción y otras."
+          },
+          {
+              "term": "Oráculo (ataque de oráculo)",
+              "definition": "Ataque que explota las vulnerabilidades presentes en el sistema de inteligencia artificial durante el proceso de inferencia, a través de interfaz o de manera directa."
+          },
+          {
+              "term": "OoD Data (Out of Domain Data)",
+              "definition": "Datos de entrada, recibidos por el sistema en fase de inferencia, que no se encuentran dentro del dominio establecido de entrenamiento y relacionado con la finalidad prevista del sistema. Indicador de posible ataque adversarial."
+          },
+          {
+              "term": "STRIP",
+              "definition": "La técnica STRIP (STRong Intentional Perturbation) está destinada a mitigar los ataques de envenenamiento de datos que generan una puerta trasera en una red neuronal profunda. Detecta respuestas adversarias en sistemas de visión artificial."
           }
       ]
   },
@@ -2674,46 +2790,71 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/12-guia-de-registros.pdf",
+  "glossaryType": "official",
       "glossary": [
           {
               "term": "Acceso al registro",
-              "definition": "Derecho, oportunidad o medios proporcionados para encontrar, utilizar o recuperar información almacenada en un registro."
+              "definition": "Derecho, oportunidad, medios para encontrar, utilizar o recuperar información."
           },
           {
               "term": "Agente",
-              "definition": "Individuo, grupo de trabajo u organización que es responsable o se encuentra involucrado en los procesos de creación, captura y/o gestión de registros."
+              "definition": "Individuo, grupo de trabajo u organización responsable o involucrado en los procesos de creación, captura y/o gestión de registros."
+          },
+          {
+              "term": "Sistema de clasificación de empresas",
+              "definition": "Herramienta para vincular registros al contexto de su creación."
           },
           {
               "term": "Clasificación",
-              "definition": "Identificación sistemática y/o disposición de actividades y/o registros comerciales en categorías de acuerdo con convenciones, métodos y reglas estructuradas."
+              "definition": "Identificación sistemática y/o disposición de actividades y/o registros comerciales en categorías de acuerdo con convenciones, métodos y reglas de procedimiento lógicamente estructurados."
           },
           {
               "term": "Conversión",
-              "definition": "Proceso que consiste en el cambio de registros de un formato a otro garantizando la persistencia de la información."
+              "definition": "Proceso de cambio de registros de un formato a otro."
           },
           {
               "term": "Destrucción",
-              "definition": "Proceso definitivo de eliminación de un registro, de manera que sea imposible cualquier posible reconstrucción del mismo."
+              "definition": "Proceso de eliminación o eliminación de un registro, más allá de cualquier posible reconstrucción."
           },
           {
               "term": "Disposición",
-              "definition": "Gama de procesos asociados con la implementación de las políticas de retención de registros, incluyendo decisiones documentadas sobre su destrucción o transferencia."
+              "definition": "Gama de procesos asociados con la implementación de la retención de registros, destrucción o decisiones de transferencia documentadas en autoridades de disposición u otros instrumentos."
+          },
+          {
+              "term": "Autoridad de disposición",
+              "definition": "Instrumento que define las acciones de disposición autorizadas para registros especificados."
           },
           {
               "term": "Evidencia",
-              "definition": "Documentación objetiva y fehaciente que deja constancia de una transacción, operación o evento dentro del sistema."
+              "definition": "Documentación de una transacción."
+          },
+          {
+              "term": "Función",
+              "definition": "Grupo de actividades que cumplen con las principales responsabilidades para lograr los objetivos estratégicos de una entidad comercial."
           },
           {
               "term": "Migración",
-              "definition": "Proceso de mover registros de una configuración de hardware o software a otra diferente, sin alterar su formato original."
+              "definition": "Proceso de mover registros de una configuración de hardware o software a otra sin cambiar el formato."
           },
           {
-              "term": "Registro",
-              "definition": "Información creada, recibida y mantenida como evidencia y como un activo por una organización o persona, en cumplimiento de obligaciones legales o de control."
+              "term": "Registro(s)",
+              "definition": "Información creada, recibida y mantenida como evidencia y como un activo por una organización o persona, en cumplimiento de obligaciones legales o en la transacción de negocios."
+          },
+          {
+              "term": "Gestión de registros",
+              "definition": "Campo de gestión responsable del control eficiente y sistemático de la creación, recepción, mantenimiento, uso y disposición de registros, incluidos los procesos de captura y mantenimiento de evidencia de las actividades empresariales y transacciones en forma de registros."
           },
           {
               "term": "Sistema de registros",
-              "definition": "El sistema informático o de información global que captura, gestiona, asegura y proporciona acceso a los registros generados a lo largo del tiempo."
+              "definition": "Sistema de información que captura, gestiona y proporciona acceso a registros a lo largo del tiempo."
+          },
+          {
+              "term": "Transacción",
+              "definition": "Unidad más pequeña de un proceso de trabajo consistente en un intercambio entre dos o más participantes o sistemas."
+          },
+          {
+              "term": "Proceso de trabajo",
+              "definition": "Una o más secuencias de acciones necesarias para producir un resultado que cumpla con las reglas de gobierno."
           }
       ]
   },
@@ -2892,6 +3033,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/13-guia-vigilancia-poscomercializacion.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Vigilancia poscomercialización",
@@ -3110,6 +3252,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/14-guia-gestion-de-incidentes.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Incidente grave",
@@ -3316,6 +3459,7 @@ export const guides: Guide[] = [
           }
       ],
       "pdfUrl": "https://aesia.digital.gob.es/storage/media/15-guia-documentacion-tecnica.pdf",
+  "glossaryType": "didactic",
       "glossary": [
           {
               "term": "Documentación Técnica",
@@ -3562,6 +3706,8 @@ export const guides: Guide[] = [
               "term": "RIA",
               "definition": "Reglamento Europeo de Inteligencia Artificial (Reglamento UE 2024/1689), normativa comunitaria que establece obligaciones estrictas para los sistemas de IA de alto riesgo."
           }
-      ]
+      ],
+      "pdfUrl": "https://aesia.digital.gob.es/storage/media/16-el-proyecto-del-sandbox-digital-espanol-de-ia-1770802998.pdf",
+      "glossaryType": "didactic"
   }
 ];

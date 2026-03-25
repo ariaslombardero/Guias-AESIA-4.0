@@ -63,13 +63,21 @@ export function GuideGlossary({ id }: { id: string }) {
                     </Link>
 
                     <div className="flex items-center gap-3">
-                        <div className="hidden sm:flex items-center px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-                            <Book className="w-3 h-3 mr-2" />
-                            {t.glossary.officialGlossary}
-                        </div>
+                        {guide.glossaryType === 'official' ? (
+                            <div className="hidden sm:flex items-center px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                                <Book className="w-3 h-3 mr-2" />
+                                Glosario oficial
+                            </div>
+                        ) : (
+                            <div className="hidden sm:flex items-center px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                <Book className="w-3 h-3 mr-2" />
+                                Glosario didáctico
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
+
 
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 {/* Title Section */}
@@ -81,6 +89,20 @@ export function GuideGlossary({ id }: { id: string }) {
                         {t.glossary.subtitle} <strong>{guide.title}</strong>
                     </p>
                 </div>
+
+                {/* Didactic Notice Banner */}
+                {guide.glossaryType === 'didactic' && (
+                    <div className="max-w-3xl mx-auto mb-10 rounded-xl border border-amber-300 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-900/20 px-6 py-4 flex items-start gap-4">
+                        <div className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-800/50 flex items-center justify-center text-amber-600 dark:text-amber-400 font-black text-lg">!</div>
+                        <div>
+                            <p className="text-sm font-bold text-amber-800 dark:text-amber-300 mb-1">Glosario didáctico</p>
+                            <p className="text-sm text-amber-700 dark:text-amber-400/90 leading-relaxed">
+                                Esta guía no incluye un anexo de glosario oficial en su PDF. Los términos y definiciones mostrados han sido generados con apoyo de inteligencia artificial para facilitar la comprensión del contenido, y han sido revisados técnicamente para garantizar su exactitud. No constituyen el texto legal del Reglamento.
+                            </p>
+                        </div>
+                    </div>
+                )}
+
 
                 {/* Search Bar */}
                 <div className="relative max-w-xl mx-auto mb-16 group">
