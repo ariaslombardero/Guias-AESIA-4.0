@@ -9,7 +9,7 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-EE4B96?style=for-the-badge&logo=framer)
 ![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-orange?style=for-the-badge)
 
-<img src="./thumbnail.png" alt="Guías AESIA 4.0 Thumbnail" width="100%" />
+<img src="./public/thumbnail.png" alt="Guías AESIA 4.0 Thumbnail" width="100%" />
 
 **Plataforma educativa interactiva para el estudio de las Guías Técnicas de la AESIA (Agencia Española de Supervisión de la Inteligencia Artificial)**
 

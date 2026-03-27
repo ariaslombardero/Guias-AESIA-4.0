@@ -22,16 +22,16 @@ export interface Mission {
 
 export const worlds: World[] = [
     {
-        id: "world-00",
+        id: "world-01",
         guideId: "01",
         name: "El nexo",
-        description: "El punto de partida de tu viaje. Comprende los fundamentos antes de adentrarte en la red.",
+        description: "El punto de partida de tu viaje. Comprende los fundamentos antes de adentrerte en la red.",
         icon: "🌌",
         color: "from-blue-500 to-indigo-600",
         locked: false,
     },
     {
-        id: "world-01",
+        id: "world-02",
         guideId: "02",
         name: "La frontera legal",
         description: "Cruza al territorio regulado. Identifica aliados y amenazas en el nuevo orden.",
@@ -40,7 +40,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-02",
+        id: "world-03",
         guideId: "03",
         name: "La arena de pruebas",
         description: "Entrena con simulaciones reales. Aquí la teoría se convierte en supervivencia.",
@@ -49,7 +49,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-03",
+        id: "world-04",
         guideId: "04",
         name: "El tribunal de conformidad",
         description: "Demuestra tu valía. Solo los sistemas dignos obtienen el sello de aprobación.",
@@ -58,7 +58,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-04",
+        id: "world-05",
         guideId: "05",
         name: "La torre de control",
         description: "Establece los protocolos. La calidad no es una opción, es tu defensa.",
@@ -67,7 +67,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-05",
+        id: "world-06",
         guideId: "06",
         name: "Las tierras del riesgo",
         description: "Un terreno peligroso. Identifica amenazas y neutralízalas antes de que sea tarde.",
@@ -76,17 +76,8 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-06",
-        guideId: "07",
-        name: "El ojo del guardián",
-        description: "La máquina no decide sola. Mantén la vigilancia humana o pierde el control.",
-        icon: "👁️",
-        color: "from-cyan-500 to-blue-600",
-        locked: false,
-    },
-    {
         id: "world-07",
-        guideId: "08",
+        guideId: "07",
         name: "El archivo de cristal",
         description: "Datos puros, decisiones justas. Limpia el flujo de información de impurezas.",
         icon: "💎",
@@ -95,6 +86,15 @@ export const worlds: World[] = [
     },
     {
         id: "world-08",
+        guideId: "08",
+        name: "El ojo del guardián",
+        description: "La máquina no decide sola. Mantén la vigilancia humana o pierde el control.",
+        icon: "👁️",
+        color: "from-cyan-500 to-blue-600",
+        locked: false,
+    },
+    {
+        id: "world-09",
         guideId: "09",
         name: "El espejo de la verdad",
         description: "Nada se oculta. Haz que la caja negra sea transparente para todos.",
@@ -103,7 +103,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-09",
+        id: "world-10",
         guideId: "10",
         name: "El blanco perfecto",
         description: "Afina tu puntería. La precisión es la diferencia entre el éxito y el error fatal.",
@@ -112,7 +112,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-10",
+        id: "world-11",
         guideId: "11",
         name: "La fortaleza inquebrantable",
         description: "Resiste el caos. Construye sistemas que no caigan ante lo imprevisto.",
@@ -121,7 +121,7 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-11",
+        id: "world-12",
         guideId: "12",
         name: "El cortafuegos sombrío",
         description: "Enemigos invisibles acechan. Protege el núcleo de ataques adversarios.",
@@ -130,26 +130,17 @@ export const worlds: World[] = [
         locked: false,
     },
     {
-        id: "world-12",
-        guideId: "13",
-        name: "El registro eterno",
-        description: "Todo queda grabado. La trazabilidad es tu mejor coartada.",
-        icon: "📜",
-        color: "from-amber-700 to-orange-800",
-        locked: false,
-    },
-    {
         id: "world-13",
-        guideId: "14",
+        guideId: "13",
         name: "El observatorio",
-        description: "El lanzamiento es solo el inicio. Vigila el horizonte perpetuamente.",
+        description: "El lanzamiento es solo el inicio. Vigila el horizonte tras la puesta en mercado.",
         icon: "🔭",
         color: "from-indigo-400 to-blue-500",
         locked: false,
     },
     {
         id: "world-14",
-        guideId: "15",
+        guideId: "14",
         name: "La sala de crisis",
         description: "Alerta roja. Gestiona incidentes críticos antes de que colapse el sistema.",
         icon: "🚨",
@@ -158,7 +149,7 @@ export const worlds: World[] = [
     },
     {
         id: "world-15",
-        guideId: "16",
+        guideId: "15",
         name: "La biblioteca maestra",
         description: "El conocimiento es poder. Documenta cada engranaje de la máquina.",
         icon: "📚",
