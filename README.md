@@ -35,7 +35,7 @@ La aplicación está diseñada para que tanto profesionales del sector tecnológ
 > **Aviso de precisión:** Esta plataforma es un recurso educativo diseñado para facilitar la comprensión de la normativa. Su estructura y contenido han sido desarrollados mediante metodologías de **Vibe Coding** (IA Generativa), por lo que es posible que existan omisiones o errores de interpretación al trasladar la información técnica de las guías a la lógica de la aplicación. La información oficial y vinculante se encuentra exclusivamente en los documentos originales de la **AESIA**. Si detectas cualquier error, te agradecería que me lo comunicaras para proceder a su subsanación.
 ---
 
-## ✨ Características
+## 📌  Características
 
 - 🎨 **Diseño premium UI/UX** — Interfaz adaptativa (Claro/Oscuro) con menús scroll-aware, glassmorphism y micro-animaciones fluidas
 - 📖 **16 guías técnicas completas** — Cobertura total de los documentos oficiales de la AESIA
